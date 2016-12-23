@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[hexo部署时ERROR Deployer not found:"Git"]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/20/2222/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo d </div><div class="line">ERROR Deployer not found: Git</div></pre></td></tr></table></figure>
+<p>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git –save</div></pre></td></tr></table></figure></p>
+<p>即可。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo部署后会自动删除CNAME、图片等文件]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/20/hexo%E9%83%A8%E7%BD%B2%E5%90%8E%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">将需要上传至github的内容放在source文件夹，例如CNAME、favicon.ico、images等。</div></pre></td></tr></table></figure>
+<p>如图：<br><img src="https://pic4.zhimg.com/93a311be4f651f8cd639233e544b826b_r.jpg&quot;这是CSDN的图标&quot;" alt="图"></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[算法 动态规划 循环赛问题]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/20/%E7%AE%97%E6%B3%95%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%20%E5%BE%AA%E7%8E%AF%E8%B5%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>动态规划算法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include&lt;math.h&gt;</div><div class="line">#include&lt;stdlib.h&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">void Round_Robin_Calendar(int k,int **a)</div><div class="line">&#123;</div><div class="line"></div><div class="line">    int n=1,i,j,s;</div><div class="line">    for(i=1; i&lt;=k; i++)</div><div class="line">    &#123;</div><div class="line">        n*=2;</div><div class="line">    &#125;</div><div class="line">    for(i=0; i&lt;=n; i++)</div><div class="line">    &#123;</div><div class="line">        a[0][i]=i+1;</div><div class="line">    &#125;</div><div class="line">    int m=1;</div><div class="line">    for(s=1; s&lt;=k; s++)</div><div class="line">    &#123;</div><div class="line">        n/=2;</div><div class="line"></div><div class="line">        for(int t=1; t&lt;=n; t++)</div><div class="line">        &#123;</div><div class="line">            for(i=m; i&lt;2*m; i++)</div><div class="line">            &#123;</div><div class="line"></div><div class="line"></div><div class="line">                for(j=m; j&lt;2*m; j++)</div><div class="line">                &#123;</div><div class="line">                    a[i][j+(t-1)*m*2]=a[i-m][j+(t-1)*m*2-m];</div><div class="line">                    a[i][j+(t-1)*m*2-m]=a[i-m][j+(t-1)*m*2];</div><div class="line">                &#125;</div><div class="line"></div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">         m*=2;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int k;</div><div class="line">    cout&lt;&lt;&quot;输入k值：&quot;;</div><div class="line">    cin&gt;&gt;k;</div><div class="line"></div><div class="line">    int n=1;</div><div class="line">    //n=2的k次方(k&gt;=1)个选手参加比赛</div><div class="line">    for(int i=1; i&lt;=k; i++)</div><div class="line">        n *= 2;</div><div class="line"></div><div class="line">    int **a = new int *[n+1];//</div><div class="line">    for(int i=0; i&lt;=n; i++)//</div><div class="line">    &#123;</div><div class="line">        a[i] = new int[n+1];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // int n=pow(2,k);</div><div class="line">    //  a = (int**)malloc(n*sizeof(int*));</div><div class="line">    Round_Robin_Calendar(k,a);</div><div class="line"></div><div class="line"></div><div class="line">    for(int i=0; i&lt;n; i++)</div><div class="line">    &#123;</div><div class="line">        for(int j=0; j&lt;n; j++)</div><div class="line">        &#123;</div><div class="line">            cout&lt;&lt;a[i][j]&lt;&lt;&quot; &quot;;</div><div class="line">        &#125;</div><div class="line">        cout&lt;&lt;endl;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    for(int i=0; i&lt;=n; i++)</div><div class="line">    &#123;</div><div class="line">        delete[] a[i];</div><div class="line">    &#125;</div><div class="line">    delete[] a;</div><div class="line"></div><div class="line"></div><div class="line">    //cout &lt;&lt; &quot;Hello world!&quot; &lt;&lt; endl;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/20/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>http://nwsuafzq.github.io/about/index.html</url>
+      <content type="html"><![CDATA[<p>大家好，我是张琼。欢迎来到我的个人技术博客。<br>我是一个来自NWAFU的CS专业大学生。天津人。爱好学习有趣的技术。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书]]></title>
+      <url>http://nwsuafzq.github.io/reading/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+  
+</search>
