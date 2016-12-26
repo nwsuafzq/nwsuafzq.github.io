@@ -13,7 +13,7 @@
     </entry>
     
     <entry>
-      <title></title>
+      <title><![CDATA[git的公钥和私钥]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/</url>
       <content type="html"><![CDATA[<p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
 ]]></content>
