@@ -133,6 +133,51 @@
   </entry>
   
   <entry>
+    <title>jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/</id>
+    <published>2016-12-26T00:00:00.000Z</published>
+    <updated>2016-12-26T14:09:06.893Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;都是跳转。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;response.sendRedirect()是跳转发生在客户端，地址栏变化。forward动作转向发生在服务端，地址栏不变。&lt;br&gt;forward不会产生新的请求，而是将原请求转发给新的资源。forward仍保留request
+    
+    </summary>
+    
+      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
+    
+    
+      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSP作用对象小结</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/jsp对象作用范围小结/</id>
+    <published>2016-12-26T00:00:00.000Z</published>
+    <updated>2016-12-26T09:57:45.768Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有page；request；session；application&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;page范围：&lt;br&gt;在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。&lt;br&gt;request范围：&lt;br&gt;可以在请求对象产生后、响应完成前，被请求的
+    
+    </summary>
+    
+      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
+    
+    
+      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git的公钥和私钥</title>
     <link href="http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/"/>
     <id>http://nwsuafzq.github.io/2016/12/26/git的公钥和私钥/</id>
@@ -176,47 +221,25 @@
   </entry>
   
   <entry>
-    <title>jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/</id>
-    <published>2016-12-26T00:00:00.000Z</published>
-    <updated>2016-12-26T14:09:06.893Z</updated>
+    <title>Linux下安装Git</title>
+    <link href="http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/"/>
+    <id>http://nwsuafzq.github.io/2016/12/21/Linux下安装Git/</id>
+    <published>2016-12-21T00:00:00.000Z</published>
+    <updated>2016-12-26T14:14:27.446Z</updated>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;p&gt;都是跳转。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;response.sendRedirect()是跳转发生在客户端，地址栏变化。forward动作转向发生在服务端，地址栏不变。&lt;br&gt;forward不会产生新的请求，而是将原请求转发给新的资源。forward仍保留request
+      &lt;p&gt;首先看看是否安装了git，命令行输入&lt;strong&gt;&lt;em&gt;git&lt;/em&gt;&lt;/strong&gt;,看是否有相关信息，没有就要安装了。。&lt;br&gt;输入：&lt;br&gt;sudo apt-get install git&lt;br&gt;即可&lt;/p&gt;
+
     
     </summary>
     
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
+      <category term="git" scheme="http://nwsuafzq.github.io/categories/git/"/>
     
     
-      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
+      <category term="git" scheme="http://nwsuafzq.github.io/tags/git/"/>
     
-  </entry>
-  
-  <entry>
-    <title>JSP作用对象小结</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/jsp对象作用范围小结/</id>
-    <published>2016-12-26T00:00:00.000Z</published>
-    <updated>2016-12-26T09:57:45.768Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有page；request；session；application&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;page范围：&lt;br&gt;在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。&lt;br&gt;request范围：&lt;br&gt;可以在请求对象产生后、响应完成前，被请求的
-    
-    </summary>
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
-    
-    
-      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
+      <category term="liunx" scheme="http://nwsuafzq.github.io/tags/liunx/"/>
     
   </entry>
   
