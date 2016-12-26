@@ -38,6 +38,26 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/git的公钥和私钥/</id>
+    <published>2016-12-26T00:00:00.000Z</published>
+    <updated>2016-12-26T09:59:51.216Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.GIT服务器上存储的是&lt;strong&gt;公钥&lt;/strong&gt;，你本地存储的是&lt;strong&gt;私钥&lt;/strong&gt;，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以&lt;strong&gt;公钥可
+    
+    </summary>
+    
+      <category term="git" scheme="http://nwsuafzq.github.io/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://nwsuafzq.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo部署时ERROR Deployer not found:&quot;Git&quot;</title>
     <link href="http://nwsuafzq.github.io/2016/12/20/2222/"/>
     <id>http://nwsuafzq.github.io/2016/12/20/2222/</id>
