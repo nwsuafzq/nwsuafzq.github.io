@@ -7,7 +7,7 @@
 
     
 
-    <title>算法 动态规划 循环赛问题 | 所长的blog</title>
+    <title>xmapp | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="算法 动态规划 循环赛问题"/>
+    
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -257,110 +257,30 @@
 
     <main>
         <div class="container main-container">
-    <nav class="page-nav hide-on-small-only">
+    
+
+<nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（分类目录）</span>
-        
-            
-    
-    
-    <a class="breadcrumb" href="/categories/算法/">算法</a>
-
-
+        <span class="breadcrumb">当前位置（标签）</span>
         
 
+        
+            <a class="breadcrumb" href="/tags/xmapp/">xmapp</a>
         
     </div>
 </nav>
 
-<article>
-    <div class="card">
-        <div class="card-content">
-            
-
-            <div class="article-title">
-                
-    
-        <h1>算法 动态规划 循环赛问题</h1>
-    
 
 
-            </div>
-            <time class="pink-link-context" datetime="2016-12-20T13:46:38.452Z"><a href="/2016/12/20/算法 动态规划 循环赛问题/">2016-12-20</a></time>
-
-            <span id="busuanzi_container_page_pv" class="read-times-container">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_page_pv"></span>
-</span>
-
-            
-    <div class="tags-row">
+    <div class="collection mt-0">
         
-            <a href="/tags/算法/" class="chip pink lighten-1">算法</a>
+            <a href="/2016/12/21/xmapp整合的Apache服务器更改端口号/" class="collection-item grey-text text-darken-1">
+                <time datetime="2016-12-21T00:00:00.000Z">2016-12-21</time>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                xmapp整合的Apache服务器更改端口号
+            </a>
         
     </div>
-
-
-            <div class="toc pink-link-context hide-on-med-and-down">
-    
-</div>
-
-
-            <div class="entry pink-link-context">
-                <p>动态规划算法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include&lt;math.h&gt;</div><div class="line">#include&lt;stdlib.h&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">void Round_Robin_Calendar(int k,int **a)</div><div class="line">&#123;</div><div class="line"></div><div class="line">    int n=1,i,j,s;</div><div class="line">    for(i=1; i&lt;=k; i++)</div><div class="line">    &#123;</div><div class="line">        n*=2;</div><div class="line">    &#125;</div><div class="line">    for(i=0; i&lt;=n; i++)</div><div class="line">    &#123;</div><div class="line">        a[0][i]=i+1;</div><div class="line">    &#125;</div><div class="line">    int m=1;</div><div class="line">    for(s=1; s&lt;=k; s++)</div><div class="line">    &#123;</div><div class="line">        n/=2;</div><div class="line"></div><div class="line">        for(int t=1; t&lt;=n; t++)</div><div class="line">        &#123;</div><div class="line">            for(i=m; i&lt;2*m; i++)</div><div class="line">            &#123;</div><div class="line"></div><div class="line"></div><div class="line">                for(j=m; j&lt;2*m; j++)</div><div class="line">                &#123;</div><div class="line">                    a[i][j+(t-1)*m*2]=a[i-m][j+(t-1)*m*2-m];</div><div class="line">                    a[i][j+(t-1)*m*2-m]=a[i-m][j+(t-1)*m*2];</div><div class="line">                &#125;</div><div class="line"></div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">         m*=2;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int k;</div><div class="line">    cout&lt;&lt;&quot;输入k值：&quot;;</div><div class="line">    cin&gt;&gt;k;</div><div class="line"></div><div class="line">    int n=1;</div><div class="line">    //n=2的k次方(k&gt;=1)个选手参加比赛</div><div class="line">    for(int i=1; i&lt;=k; i++)</div><div class="line">        n *= 2;</div><div class="line"></div><div class="line">    int **a = new int *[n+1];//</div><div class="line">    for(int i=0; i&lt;=n; i++)//</div><div class="line">    &#123;</div><div class="line">        a[i] = new int[n+1];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // int n=pow(2,k);</div><div class="line">    //  a = (int**)malloc(n*sizeof(int*));</div><div class="line">    Round_Robin_Calendar(k,a);</div><div class="line"></div><div class="line"></div><div class="line">    for(int i=0; i&lt;n; i++)</div><div class="line">    &#123;</div><div class="line">        for(int j=0; j&lt;n; j++)</div><div class="line">        &#123;</div><div class="line">            cout&lt;&lt;a[i][j]&lt;&lt;&quot; &quot;;</div><div class="line">        &#125;</div><div class="line">        cout&lt;&lt;endl;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    for(int i=0; i&lt;=n; i++)</div><div class="line">    &#123;</div><div class="line">        delete[] a[i];</div><div class="line">    &#125;</div><div class="line">    delete[] a;</div><div class="line"></div><div class="line"></div><div class="line">    //cout &lt;&lt; &quot;Hello world!&quot; &lt;&lt; endl;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-                
-<p class="pink-link-context">
-    <a href="/2016/12/20/hexo部署后会自动删除/" rel="next" title="Hexo部署后会自动删除CNAME、图片等文件">
-    上一篇：Hexo部署后会自动删除CNAME、图片等文件
-  </a>
-</p>
-
-
-
-<p class="pink-link-context">
-    <a href="/2016/12/20/hello-world/" rel="next" title="Hello World">
-    下一篇：Hello World
-  </a>
-</p>
-
-
-            </div>
-			
-        </div>
-    </div>
-</article>
-
-
-
-
-    <section id="comment">
-        <div class="card">
-            <div class="card-content">
-                <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2016/12/20/算法 动态规划 循环赛问题/" data-title="算法 动态规划 循环赛问题" data-url="http://nwsuafzq.github.io/2016/12/20/算法 动态规划 循环赛问题/"></div>
-
-                <script type="text/javascript">
-                    console.log(document.querySelector('.ds-thread'));
-                    var duoshuoQuery = {
-                        short_name: 'zhangqiong'
-                    };
-                    (function() {
-                        var ds = document.createElement('script');
-                        ds.type = 'text/javascript';
-                        ds.async = true;
-                        ds.src = (document.location.protocol == 'https:'
-                            ? 'https:'
-                            : 'http:') + '//static.duoshuo.com/embed.js';
-                        ds.charset = 'UTF-8';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-                    })();
-                </script>
-                <!-- Duoshuo Comment END -->
-            </div>
-        </div>
-    </section>
-
 
 
 </div>
