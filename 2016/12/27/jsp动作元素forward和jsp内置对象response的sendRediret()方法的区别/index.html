@@ -7,7 +7,7 @@
 
     
 
-    <title>Java EE | 所长的blog</title>
+    <title>jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别"/>
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -225,42 +225,109 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
         <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/Java-EE/">Java EE</a>
+
 
         
-            <a class="breadcrumb" href="/categories/Java-EE/">Java EE</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2016-12-26T21:56:55.000Z"><a href="/2016/12/27/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/">2016-12-27</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2016/12/27/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-12-26T21:56:55.000Z">2016-12-27</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别
-            </a>
-        
-            <a href="/2016/12/26/jsp对象作用范围小结/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-12-26T00:00:00.000Z">2016-12-26</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                JSP作用对象小结
-            </a>
-        
-            <a href="/2016/12/26/JSP和Servlet的区别/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-12-26T00:00:00.000Z">2016-12-26</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                JSP与Servlet区别
-            </a>
+            <a href="/tags/JSP/" class="chip pink lighten-1">JSP</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry pink-link-context">
+                <hr>
+<p>都是跳转。</p>
+<hr>
+<p>response.sendRedirect()是跳转发生在客户端，地址栏变化。forward动作转向发生在服务端，地址栏不变。<br>forward不会产生新的请求，而是将原请求转发给新的资源。forward仍保留request的信息；</p>
+<hr>
+<p>sendRedirect会产生新的请求。sendRedirect则将开始一个新的request，原有的request全部失效</p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2016/12/26/jsp对象作用范围小结/" rel="next" title="JSP作用对象小结">
+    下一篇：JSP作用对象小结
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2016/12/27/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/" data-title="jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别" data-url="http://nwsuafzq.github.io/2016/12/27/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangqiong'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>
