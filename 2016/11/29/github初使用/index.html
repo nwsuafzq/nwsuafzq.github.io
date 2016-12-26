@@ -7,7 +7,7 @@
 
     
 
-    <title>git的公钥和私钥 | 所长的blog</title>
+    <title>Github初使用 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="git的公钥和私钥"/>
+    <meta property="og:title" content="Github初使用"/>
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -249,12 +249,12 @@
             <div class="article-title">
                 
     
-        <h1>git的公钥和私钥</h1>
+        <h1>Github初使用</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-12-26T00:00:00.000Z"><a href="/2016/12/26/git的公钥和私钥/">2016-12-26</a></time>
+            <time class="pink-link-context" datetime="2016-11-29T00:00:00.000Z"><a href="/2016/11/29/github初使用/">2016-11-29</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -264,7 +264,7 @@
             
     <div class="tags-row">
         
-            <a href="/tags/git/" class="chip pink lighten-1">git</a>
+            <a href="/tags/github/" class="chip pink lighten-1">github</a>
         
     </div>
 
@@ -275,22 +275,32 @@
 
 
             <div class="entry pink-link-context">
-                <p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
+                <p>先在github上注册帐号，太简单了不写了。<br>然后下载windows下的git客户端，我上传到csdn上了可以找我的资源来下载。。。<br>安装完后鼠标右键会多两个选项 一个是git的GUI界面还有一个BASH界面</p>
+<p>右键打开BASH</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;yourname&quot;</div></pre></td></tr></table></figure>
+<p> （这里的yourname相当于你的一个签名，而非github的登录名。以后你提交的文档都会有这个签名）<br>    回车后继续输入：<br>     <code>git config --global user.email &quot;youreami@xx.xxx&quot;</code>       （这里输入的是你github的帐户邮箱）</p>
+<p><strong>设置SSH</strong></p>
+<p>  SSH是一种连接方式，一方面免于你总是在连接时输入用户和密码，另一方面增加安全性。本人初次接触SSH，我的简单理解是，ssh是两段很长的字符串，一段是锁，另一段是钥匙。你把锁放在你的github帐户上，而电脑上留有你的钥匙，每当连接时，git会自动用钥匙去开锁。<br>    第一步：生成钥匙和锁<br>   在命令行输入：<code>ssh-keygen -t rsa -C  your_email@youremail.com</code><br>   然后回车，期间会问你生成的文件名和passphrase，对于我这种菜鸟，我一路点回车。如果你也是菜鸟，跟我一样做。 （passphrase 可以设置密码）<br>    第二步：将锁放到github的帐户里<br>   上一步生成的文件放在了C:/Users/用户名（你的windows用户）/.ssh/文件夹中，用记事本打开其中的id_rsa.pub文件，全部内容复制。登录github网站，找到account setting<br>    第三步：测试是否成功<br>     在命令行输入：<code>ssh -T git@github.com</code> 如果成功，会显示欢迎字符。</p>
+<p>创建一个远程库(repository)，在github网站上点击new repositories<br>新建一个新项目（你也可以加入到一个已有的项目）<br>新建项目的操作，其实很简单，输入项目名就可以直接Create了。<br>然后复制下<strong>项目地址</strong>。</p>
+<p>输入git  clone  接着将先前记录下来的<strong>地址</strong>复制到后面，回车。</p>
+<p>将下载下来的项目文件夹的所有文件及文件夹，包括.git文件夹在内，全部拷贝到你的托管项目的根目录（或者将你的托管项目拷贝到该目录）</p>
+<p>cd XXXX<br>进入到该托管项目的根目录。<br>输入<br>git add .<br>将改动的地方添加到版本管理器</p>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git  commit -m &quot;changes log&quot;</div></pre></td></tr></table></figure>
+<p>提交到本地的版本控制库里，<br>引号里面是你对本次提交的说明信息。</p>
+<p>最后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
+<p>将你本地的仓库提交到你的github账号里，<br>此时会要求你输入你的github的账号和密码。</p>
+<p>这样就把自己的项目上传完成了，可以打开github网页查看一下。</p>
 
                 
 <p class="pink-link-context">
-    <a href="/2016/12/26/jsp对象作用范围小结/" rel="next" title="JSP作用对象小结">
-    上一篇：JSP作用对象小结
+    <a href="/2016/12/20/hello-world/" rel="next" title="Hello World">
+    上一篇：Hello World
   </a>
 </p>
 
 
-
-<p class="pink-link-context">
-    <a href="/2016/12/26/JSP和Servlet的区别/" rel="next" title="JSP与Servlet区别">
-    下一篇：JSP与Servlet区别
-  </a>
-</p>
 
 
             </div>
@@ -306,7 +316,7 @@
         <div class="card">
             <div class="card-content">
                 <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2016/12/26/git的公钥和私钥/" data-title="git的公钥和私钥" data-url="http://nwsuafzq.github.io/2016/12/26/git的公钥和私钥/"></div>
+                <div class="ds-thread" data-thread-key="2016/11/29/github初使用/" data-title="Github初使用" data-url="http://nwsuafzq.github.io/2016/11/29/github初使用/"></div>
 
                 <script type="text/javascript">
                     console.log(document.querySelector('.ds-thread'));

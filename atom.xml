@@ -183,4 +183,26 @@
     
   </entry>
   
+  <entry>
+    <title>Github初使用</title>
+    <link href="http://nwsuafzq.github.io/2016/11/29/github%E5%88%9D%E4%BD%BF%E7%94%A8/"/>
+    <id>http://nwsuafzq.github.io/2016/11/29/github初使用/</id>
+    <published>2016-11-29T00:00:00.000Z</published>
+    <updated>2016-12-26T14:01:37.383Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;先在github上注册帐号，太简单了不写了。&lt;br&gt;然后下载windows下的git客户端，我上传到csdn上了可以找我的资源来下载。。。&lt;br&gt;安装完后鼠标右键会多两个选项 一个是git的GUI界面还有一个BASH界面&lt;/p&gt;
+&lt;p&gt;右键打开BASH&lt;/p&gt;
+&lt;figur
+    
+    </summary>
+    
+      <category term="git" scheme="http://nwsuafzq.github.io/categories/git/"/>
+    
+    
+      <category term="github" scheme="http://nwsuafzq.github.io/tags/github/"/>
+    
+  </entry>
+  
 </feed>
