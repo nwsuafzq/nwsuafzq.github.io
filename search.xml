@@ -16,11 +16,64 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP作用对象小结]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
-      <content type="html"><![CDATA[<p>有page；request；session；application</p>
+      <title><![CDATA[我的第一个EJB应用]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAEJB%E5%BA%94%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>本来想随便试试，结果遇到好多问题。<br>一开始用的服务器是jboss7.0，结果没找到需要导入的jbossall-client.jar包，后来从老师那里下了一个6.0</p>
 <hr>
-<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
+<h2 id="服务器端开发："><a href="#服务器端开发：" class="headerlink" title="服务器端开发："></a>服务器端开发：</h2><p>1.新建EJB Project<br>2.编写EJB代码(接口、实现类)<br>接口：FirstEjb.Java<br>实现类：FirstEjbBean.java<br>3.利用注解配置EJB(定义EJB的类型和访问方式)</p>
+<p>FirstEjb.java：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">package firstejb;</div><div class="line"></div><div class="line">public interface FirstEjb &#123;</div><div class="line">	 public String saySomething(String name);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>FirstEjbBean.java：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">package firstejb;</div><div class="line"></div><div class="line">import javax.ejb.Remote;</div><div class="line">import javax.ejb.Stateless;</div><div class="line"></div><div class="line">@Stateless  </div><div class="line">@Remote  </div><div class="line">public class FirstEjbBean implements FirstEjb &#123;  </div><div class="line">  </div><div class="line">    @Override  </div><div class="line">    public String saySomething(String name) &#123;  </div><div class="line">        return &quot;你好,&quot; + name;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4.把服务端部署到JBoss并启动JBoss(我用的是6.0）</p>
+<h2 id="客户端开发："><a href="#客户端开发：" class="headerlink" title="客户端开发："></a>客户端开发：</h2><p>5.开发客户端-另外新建一个Java项目；不用建到服务器里单独建一个<br>6.将客户端的依赖包添加到项目的类路径中<br>jboss根目录下client文件夹下的jbossall-client.jar导入进去<br>7.将EJB项目的接口打包(Export - jar)（客户端只需要EJB的接口即可），并把这个jar包加入到客户端项目的类路径中<br><em>或<br>将EJB项目添加到客户端项目中（Add Project）</em></p>
+<p>下面就该编写客户端代码了：<br>FirstEjbClient .java：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import javax.naming.InitialContext;</div><div class="line"></div><div class="line">import firstejb.FirstEjb;</div><div class="line"></div><div class="line"></div><div class="line">public class FirstEjbClient &#123;</div><div class="line"></div><div class="line">	 public static void main(String[] args) throws Exception &#123;  </div><div class="line">         </div><div class="line">	        InitialContext context = new InitialContext();  </div><div class="line">	        FirstEjb firstEjb = (FirstEjb)context.lookup(&quot;FirstEjbBean/remote&quot;);  </div><div class="line">	        String s = firstEjb.saySomething(&quot;ZhangQ&quot;);  </div><div class="line">	        System.out.println(s);  </div><div class="line">	    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>并且在客户端源代码目录下添加jndi.properties文件，这是为了客户端的应用程序能够使用JNDI来查找EJB对象</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory</div><div class="line">java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces</div><div class="line">java.naming.provider.url=localhost</div></pre></td></tr></table></figure>
+<p>最后运行客户端显示如下成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">log4j:WARN No appenders could be found for logger (org.jnp.interfaces.TimedSocketFactory).</div><div class="line">log4j:WARN Please initialize the log4j system properly.</div><div class="line">log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.</div><div class="line">你好,ZhangQ</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[我对Spring中<bean>的理解]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/%E6%88%91%E5%AF%B9Spring%E4%B8%AD-bean-%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20161125194644255" alt="bean.xml截图"></p>
+<p>在Service层需要生成bookDAO的get set 方法，如下图：<br><img src="http://img.blog.csdn.net/20161125194900495" alt="Service业务逻辑层"><br>由Spring容器托管所以不用再new一个对象了<em>(BookDAO bookDAO=new BookDAO())</em></p>
+<p>Action类中生成get set方法<img src="http://img.blog.csdn.net/20161125195202233" alt="Action类"><br>由Spring容器托管所以不用再new一个对象了</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[java 高级for循环]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/java%20%E9%AB%98%E7%BA%A7for%E5%BE%AA%E7%8E%AF/</url>
+      <content type="html"><![CDATA[<p>//从java 5.0开始，Java语言就有加强版的for循环<br>高级for循环是集合中（Collection）迭代器的简写形式。即集合中的迭代器可以使用高级for来代替。</p>
+<h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h2><p>for(数据类型 变量名：被遍历的集合（Collection）或数组)<br>{</p>
+<p>}<br>高级for循环只对集合进行遍历。<br>只能获取集合元素，但是不能对集合进行操作。<br>高级for循环有一个局限性，必须有一个被遍历的目标<br>建议在遍历数组的时候，还是希望用传统for，因为传统for有角标。</p>
+<hr>
+<p>比如这个：<br>for(String name:nameArray){</p>
+<p>//……</p>
+<p>}<br>编译器会认为：<br>1.创建名称为name的String变量。<br>2.将nameArray的第一个元素赋给name。<br>3.执行重复的内容。<br>4.赋值给下一个元素name。<br>5.重复执行至所有的元素都被运行为止<br>里面的数据类型是任意的，只要前面的数据类型和后面要遍历的集合中的元素的类型一致即可。例如:ArrayList list=new ArrayList();<br>list.add(<strong>“test”</strong>);<br>list.add(<strong>new Date()</strong>);<br>for(<strong>Object</strong> obj : list){  System.out.println(obj);}</p>
+<hr>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;String&gt; al=new ArrayList&lt;String&gt;();</div><div class="line">		al.add(&quot;abc1&quot;);</div><div class="line">		al.add(&quot;abc2&quot;);</div><div class="line">		al.add(&quot;abc3&quot;);</div><div class="line">		for(String s:al)</div><div class="line">			System.out.println(s);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int[] arr=&#123;1,3,4,5,2&#125;;</div><div class="line">		for(int i:arr)</div><div class="line">			System.out.println(&quot;i:&quot;+i);</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[”==“和.equals()的区别分析]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/%E2%80%9D==%E2%80%9C%E5%92%8C.equals()%E7%9A%84%E5%8C%BA%E5%88%AB%E5%88%86%E6%9E%90/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public class EqualTest &#123; </div><div class="line">public static void main(String[] args) &#123; </div><div class="line"></div><div class="line">    //对于基本类型的变量。&quot;==&quot;和&quot;equal&quot;的区别 </div><div class="line">    int t1=57; </div><div class="line">    int t2=67; </div><div class="line">    int t3=124; </div><div class="line">    int t4=124; </div><div class="line">     </div><div class="line">    //“==”对于基本数据类型，判断两个变量的值是否相等。 </div><div class="line">    Boolean result1=(t1==t2); </div><div class="line">    Boolean result2=((t1+t2)==t3); </div><div class="line">    Boolean result3=(t3==t4); </div><div class="line">     </div><div class="line">    System.out.println(&quot;/n/n-----【t1==t2】&quot;+result1+&quot;/n-----【(t1+t2)=t3】&quot;+result2+&quot;/n-----【t3=t4】&quot;+result3);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//“equal”不能用于基本数据类型。只能用于类变量。对于基本数据类型要用其包装类。 </div><div class="line">   Integer i1=new Integer(t1); </div><div class="line">   Integer i2=new Integer(t2); </div><div class="line">   Integer i3=new Integer(t3); </div><div class="line">   Integer i4=new Integer(t4); </div><div class="line">    </div><div class="line">    </div><div class="line">   Boolean ri1=i1.equals(i2); </div><div class="line">   Boolean ri2=i3.equals(i1+i2); </div><div class="line">   Boolean ri3=i3.equals(i4); </div><div class="line">    </div><div class="line">   System.out.println(&quot;/n/n-----【i1.equals(i2)】&quot;+ri1+&quot;/n-----【i3.equals(i1+i2)】&quot;+ri2+&quot;/n-----【i3.equals(i4)】&quot;+ri3);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//对于对象变量，&quot;==&quot;和&quot;equal&quot;的区别 </div><div class="line"></div><div class="line">String st1=&quot;wasiker &quot;; </div><div class="line">String st2=&quot;is super man&quot;; </div><div class="line">String st3=&quot;wasiker is super man&quot;; </div><div class="line">String st4=&quot;wasiker is super man&quot;; </div><div class="line"> </div><div class="line">Boolean b1=(st1==st2); </div><div class="line">Boolean b2=(st1+st2)==st3; </div><div class="line">Boolean b3=(st3==st4); </div><div class="line"> </div><div class="line">System.out.println(&quot;/n/n-----【st1==st2】&quot;+b1+&quot;/n-----【(st1+st2)==st3】&quot;+b2+&quot;/n-----【st3==st4】&quot;+b3);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//因为对象变量的存储的是对象在内存中的路径，即内存地址。所以用“==”比较时，即使 </div><div class="line">//对象的值相等，但是他们的内存地址不同，所以==的结果为false。故“==”用于比较两 </div><div class="line">//个变量的值是否相等，而不是变量引用的对象是否相等 </div><div class="line"></div><div class="line">    Boolean r1=st1.equals(st2); </div><div class="line">    Boolean r2=(st1+st2).equals(st3); </div><div class="line">    Boolean r3=st3.equals(st4); </div><div class="line">     </div><div class="line">    System.out.println(&quot;/n/n-----【st1.equals(st2)】&quot;+r1+&quot;/n-----【(st1+st2).equals(st3)】&quot;+r2+&quot;/n-----【st3.equals(st4)】&quot;+r3); </div><div class="line"></div><div class="line">//equal用于比较两个对象是否相同。 </div><div class="line">&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>运行结果为：<br>—–【t1==t2】false<br>—–【(t1+t2)=t3】true<br>—–【t3=t4】true </p>
+<p>—–【i1.equals(i2)】false<br>—–【i3.equals(i1+i2)】true<br>—–【i3.equals(i4)】true </p>
+<p>—–【st1==st2】false<br>—–【(st1+st2)==st3】false<br>—–【st3==st4】true </p>
+<p>—–【st1.equals(st2)】false<br>—–【(st1+st2).equals(st3)】true<br>—–【st3.equals(st4)】true </p>
+<p><strong>总之：<br>“==”比较的是值【变量(栈)内存中存放的对象的(堆)内存地址】<br>equal用于比较两个对象的值是否相同【不是比地址】</strong> </p>
+<p>【特别注意】Object类中的equals方法和“==”是一样的，没有区别，而String类，Integer类等等一些类，是重写了equals方法，才使得equals和“==不同”，所以，当自己创建类时，自动继承了Object的equals方法，要想实现不同的等于比较，必须重写equals方法。</p>
+<p>“==”比”equal”运行速度快,因为”==”只是比较引用.</p>
 ]]></content>
     </entry>
     
@@ -36,6 +89,15 @@
       <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
 <p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JSP作用对象小结]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>有page；request；session；application</p>
+<hr>
+<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
 ]]></content>
     </entry>
     

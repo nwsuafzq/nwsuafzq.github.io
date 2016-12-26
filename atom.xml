@@ -39,24 +39,94 @@
   </entry>
   
   <entry>
-    <title>JSP作用对象小结</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/jsp对象作用范围小结/</id>
-    <published>2016-12-26T00:00:00.000Z</published>
-    <updated>2016-12-26T09:57:45.768Z</updated>
+    <title>我的第一个EJB应用</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAEJB%E5%BA%94%E7%94%A8/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/我的第一个EJB应用/</id>
+    <published>2016-12-26T14:05:46.360Z</published>
+    <updated>2016-12-26T14:06:29.005Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;有page；request；session；application&lt;/p&gt;
+      &lt;p&gt;本来想随便试试，结果遇到好多问题。&lt;br&gt;一开始用的服务器是jboss7.0，结果没找到需要导入的jbossall-client.jar包，后来从老师那里下了一个6.0&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;page范围：&lt;br&gt;在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。&lt;br&gt;request范围：&lt;br&gt;可以在请求对象产生后、响应完成前，被请求的
+&lt;h2 id=&quot;服务器端开发：&quot;&gt;&lt;a href=&quot;#服务器端开发：&quot; class=&quot;
     
     </summary>
     
       <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
     
     
-      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
+      <category term="Java EE" scheme="http://nwsuafzq.github.io/tags/Java-EE/"/>
+    
+      <category term="Bean" scheme="http://nwsuafzq.github.io/tags/Bean/"/>
+    
+      <category term="EJB" scheme="http://nwsuafzq.github.io/tags/EJB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我对Spring中&lt;bean&gt;的理解</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/%E6%88%91%E5%AF%B9Spring%E4%B8%AD-bean-%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/我对Spring中-bean-的理解/</id>
+    <published>2016-12-26T14:04:16.624Z</published>
+    <updated>2016-12-26T14:05:25.033Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20161125194644255&quot; alt=&quot;bean.xml截图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在Service层需要生成bookDAO的get set 方法，如下图：&lt;br&gt;&lt;img src=&quot;http://i
+    
+    </summary>
+    
+      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
+    
+    
+      <category term="Java EE" scheme="http://nwsuafzq.github.io/tags/Java-EE/"/>
+    
+      <category term="Spring" scheme="http://nwsuafzq.github.io/tags/Spring/"/>
+    
+      <category term="Bean" scheme="http://nwsuafzq.github.io/tags/Bean/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java 高级for循环</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/java%20%E9%AB%98%E7%BA%A7for%E5%BE%AA%E7%8E%AF/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/java 高级for循环/</id>
+    <published>2016-12-26T14:03:03.644Z</published>
+    <updated>2016-12-26T14:04:02.371Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;//从java 5.0开始，Java语言就有加强版的for循环&lt;br&gt;高级for循环是集合中（Collection）迭代器的简写形式。即集合中的迭代器可以使用高级for来代替。&lt;/p&gt;
+&lt;h2 id=&quot;格式：&quot;&gt;&lt;a href=&quot;#格式：&quot; class=&quot;headerlin
+    
+    </summary>
+    
+      <category term="Java" scheme="http://nwsuafzq.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://nwsuafzq.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>”==“和.equals()的区别分析</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/%E2%80%9D==%E2%80%9C%E5%92%8C.equals()%E7%9A%84%E5%8C%BA%E5%88%AB%E5%88%86%E6%9E%90/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/”==“和.equals()的区别分析/</id>
+    <published>2016-12-26T14:02:05.090Z</published>
+    <updated>2016-12-26T14:02:49.390Z</updated>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+    
+    </summary>
+    
+      <category term="Java" scheme="http://nwsuafzq.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://nwsuafzq.github.io/tags/Java/"/>
     
   </entry>
   
@@ -100,6 +170,28 @@
       <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
     
       <category term="Servlet" scheme="http://nwsuafzq.github.io/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSP作用对象小结</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/jsp对象作用范围小结/</id>
+    <published>2016-12-26T00:00:00.000Z</published>
+    <updated>2016-12-26T09:57:45.768Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有page；request；session；application&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;page范围：&lt;br&gt;在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。&lt;br&gt;request范围：&lt;br&gt;可以在请求对象产生后、响应完成前，被请求的
+    
+    </summary>
+    
+      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
+    
+    
+      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
     
   </entry>
   

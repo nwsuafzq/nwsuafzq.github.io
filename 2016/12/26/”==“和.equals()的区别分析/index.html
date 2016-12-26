@@ -7,7 +7,7 @@
 
     
 
-    <title>归档：2016 | 所长的blog</title>
+    <title>”==“和.equals()的区别分析 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="”==“和.equals()的区别分析"/>
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -233,94 +233,120 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/Java/">Java</a>
+
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>”==“和.equals()的区别分析</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="pink-link-context" datetime="2016-12-26T14:02:05.090Z"><a href="/2016/12/26/”==“和.equals()的区别分析/">2016-12-26</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/Java/" class="chip pink lighten-1">Java</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2016
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/2016/12/27/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T21:56:55.000Z">2016-12-27</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别
-                            </a>
-                        
-                            <a href="/2016/12/26/我的第一个EJB应用/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T14:05:46.360Z">2016-12-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                我的第一个EJB应用
-                            </a>
-                        
-                            <a href="/2016/12/26/我对Spring中-bean-的理解/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T14:04:16.624Z">2016-12-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                我对Spring中<bean>的理解
-                            </a>
-                        
-                            <a href="/2016/12/26/java 高级for循环/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T14:03:03.644Z">2016-12-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                java 高级for循环
-                            </a>
-                        
-                            <a href="/2016/12/26/”==“和.equals()的区别分析/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T14:02:05.090Z">2016-12-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                ”==“和.equals()的区别分析
-                            </a>
-                        
-                            <a href="/2016/12/26/git的公钥和私钥/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T00:00:00.000Z">2016-12-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                git的公钥和私钥
-                            </a>
-                        
-                            <a href="/2016/12/26/JSP和Servlet的区别/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T00:00:00.000Z">2016-12-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                JSP与Servlet区别
-                            </a>
-                        
-                            <a href="/2016/12/26/jsp对象作用范围小结/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-26T00:00:00.000Z">2016-12-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                JSP作用对象小结
-                            </a>
-                        
-                            <a href="/2016/12/20/2222/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-20T15:30:43.012Z">2016-12-20</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                hexo部署时ERROR Deployer not found:"Git"
-                            </a>
-                        
-                            <a href="/2016/12/20/hexo部署后会自动删除/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2016-12-20T15:19:26.095Z">2016-12-20</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo部署后会自动删除CNAME、图片等文件
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
-        
-    </ul>
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry pink-link-context">
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public class EqualTest &#123; </div><div class="line">public static void main(String[] args) &#123; </div><div class="line"></div><div class="line">    //对于基本类型的变量。&quot;==&quot;和&quot;equal&quot;的区别 </div><div class="line">    int t1=57; </div><div class="line">    int t2=67; </div><div class="line">    int t3=124; </div><div class="line">    int t4=124; </div><div class="line">     </div><div class="line">    //“==”对于基本数据类型，判断两个变量的值是否相等。 </div><div class="line">    Boolean result1=(t1==t2); </div><div class="line">    Boolean result2=((t1+t2)==t3); </div><div class="line">    Boolean result3=(t3==t4); </div><div class="line">     </div><div class="line">    System.out.println(&quot;/n/n-----【t1==t2】&quot;+result1+&quot;/n-----【(t1+t2)=t3】&quot;+result2+&quot;/n-----【t3=t4】&quot;+result3);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//“equal”不能用于基本数据类型。只能用于类变量。对于基本数据类型要用其包装类。 </div><div class="line">   Integer i1=new Integer(t1); </div><div class="line">   Integer i2=new Integer(t2); </div><div class="line">   Integer i3=new Integer(t3); </div><div class="line">   Integer i4=new Integer(t4); </div><div class="line">    </div><div class="line">    </div><div class="line">   Boolean ri1=i1.equals(i2); </div><div class="line">   Boolean ri2=i3.equals(i1+i2); </div><div class="line">   Boolean ri3=i3.equals(i4); </div><div class="line">    </div><div class="line">   System.out.println(&quot;/n/n-----【i1.equals(i2)】&quot;+ri1+&quot;/n-----【i3.equals(i1+i2)】&quot;+ri2+&quot;/n-----【i3.equals(i4)】&quot;+ri3);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//对于对象变量，&quot;==&quot;和&quot;equal&quot;的区别 </div><div class="line"></div><div class="line">String st1=&quot;wasiker &quot;; </div><div class="line">String st2=&quot;is super man&quot;; </div><div class="line">String st3=&quot;wasiker is super man&quot;; </div><div class="line">String st4=&quot;wasiker is super man&quot;; </div><div class="line"> </div><div class="line">Boolean b1=(st1==st2); </div><div class="line">Boolean b2=(st1+st2)==st3; </div><div class="line">Boolean b3=(st3==st4); </div><div class="line"> </div><div class="line">System.out.println(&quot;/n/n-----【st1==st2】&quot;+b1+&quot;/n-----【(st1+st2)==st3】&quot;+b2+&quot;/n-----【st3==st4】&quot;+b3);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//因为对象变量的存储的是对象在内存中的路径，即内存地址。所以用“==”比较时，即使 </div><div class="line">//对象的值相等，但是他们的内存地址不同，所以==的结果为false。故“==”用于比较两 </div><div class="line">//个变量的值是否相等，而不是变量引用的对象是否相等 </div><div class="line"></div><div class="line">    Boolean r1=st1.equals(st2); </div><div class="line">    Boolean r2=(st1+st2).equals(st3); </div><div class="line">    Boolean r3=st3.equals(st4); </div><div class="line">     </div><div class="line">    System.out.println(&quot;/n/n-----【st1.equals(st2)】&quot;+r1+&quot;/n-----【(st1+st2).equals(st3)】&quot;+r2+&quot;/n-----【st3.equals(st4)】&quot;+r3); </div><div class="line"></div><div class="line">//equal用于比较两个对象是否相同。 </div><div class="line">&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>运行结果为：<br>—–【t1==t2】false<br>—–【(t1+t2)=t3】true<br>—–【t3=t4】true </p>
+<p>—–【i1.equals(i2)】false<br>—–【i3.equals(i1+i2)】true<br>—–【i3.equals(i4)】true </p>
+<p>—–【st1==st2】false<br>—–【(st1+st2)==st3】false<br>—–【st3==st4】true </p>
+<p>—–【st1.equals(st2)】false<br>—–【(st1+st2).equals(st3)】true<br>—–【st3.equals(st4)】true </p>
+<p><strong>总之：<br>“==”比较的是值【变量(栈)内存中存放的对象的(堆)内存地址】<br>equal用于比较两个对象的值是否相同【不是比地址】</strong> </p>
+<p>【特别注意】Object类中的equals方法和“==”是一样的，没有区别，而String类，Integer类等等一些类，是重写了equals方法，才使得equals和“==不同”，所以，当自己创建类时，自动继承了Object的equals方法，要想实现不同的等于比较，必须重写equals方法。</p>
+<p>“==”比”equal”运行速度快,因为”==”只是比较引用.</p>
+
+                
+<p class="pink-link-context">
+    <a href="/2016/12/26/java 高级for循环/" rel="next" title="java 高级for循环">
+    上一篇：java 高级for循环
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2016/12/26/git的公钥和私钥/" rel="next" title="git的公钥和私钥">
+    下一篇：git的公钥和私钥
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2016/12/26/”==“和.equals()的区别分析/" data-title="”==“和.equals()的区别分析" data-url="http://nwsuafzq.github.io/2016/12/26/”==“和.equals()的区别分析/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangqiong'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>
