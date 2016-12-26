@@ -4,6 +4,51 @@
   
     
     <entry>
+      <title><![CDATA[Hadoop编程 在HDFS里新建文件并写入内容，以及输出]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/Hadoop%E7%BC%96%E7%A8%8B%20%E5%9C%A8HDFS%E9%87%8C%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%B9%B6%E5%86%99%E5%85%A5%E5%86%85%E5%AE%B9%EF%BC%8C%E4%BB%A5%E5%8F%8A%E8%BE%93%E5%87%BA/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">package zq;</div><div class="line"></div><div class="line">import java.io.IOException;</div><div class="line"></div><div class="line">import org.apache.hadoop.conf.Configuration;</div><div class="line">import org.apache.hadoop.fs.FSDataOutputStream;</div><div class="line">import org.apache.hadoop.fs.FileSystem;</div><div class="line">import org.apache.hadoop.fs.Path;</div><div class="line"></div><div class="line">public class Write &#123;</div><div class="line">	public static void main(String[] args) throws IOException &#123;</div><div class="line">		Configuration conf=new Configuration();</div><div class="line">		conf.set(&quot;fs.default.name&quot;, &quot;hdfs://localhost:9000&quot;);</div><div class="line">		Path inFile =new Path(&quot;/user/hadoop/hadoopfile/t1&quot;);</div><div class="line">		FileSystem hdfs=FileSystem.get(conf);</div><div class="line">		FSDataOutputStream outputStream=hdfs.create(inFile);</div><div class="line">		outputStream.writeUTF(&quot;china cstor cstor china&quot;);</div><div class="line">		outputStream.flush();</div><div class="line">		outputStream.close();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出HDFS里刚写入文件的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">package output;</div><div class="line"></div><div class="line">import java.io.IOException;</div><div class="line"></div><div class="line">import org.apache.hadoop.conf.Configuration;</div><div class="line">import org.apache.hadoop.fs.FSDataInputStream;</div><div class="line">import org.apache.hadoop.fs.FSDataOutputStream;</div><div class="line">import org.apache.hadoop.fs.FileSystem;</div><div class="line">import org.apache.hadoop.fs.Path;</div><div class="line"></div><div class="line">public class Read &#123;</div><div class="line">	public static void main(String[] args) throws IOException &#123;</div><div class="line">		Configuration conf=new Configuration();</div><div class="line">		conf.set(&quot;fs.default.name&quot;, &quot;hdfs://localhost:9000&quot;);</div><div class="line">		Path inFile =new Path(&quot;/user/hadoop/hadoopfile/t1&quot;);</div><div class="line">		FileSystem hdfs=FileSystem.get(conf);</div><div class="line">		FSDataInputStream inputStream=hdfs.open(inFile);</div><div class="line">		System.out.println(&quot;myfile:&quot;+inputStream.readUTF());</div><div class="line">		inputStream.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux Deepin系统下安装jdk]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/Linux%20Deepin%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%AE%89%E8%A3%85jdk/</url>
+      <content type="html"><![CDATA[<p>从oracle官网上下载下来jdk，我用的是1.7<br>解压tar -zxvf jdk-7u79-linux-x64.tar.gz<br>解压到哪随意，我放到了/usr/lib下<br>配置环境，修改配置文件：<br>sudo vim /etc/profile</p>
+<p>最底下加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/home/tumiz/android-studio/jdk1.8.0_51</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div></pre></td></tr></table></figure>
+<p>使配置生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+<p>最后输入 java -version看看版本信息，看看是否安装成功。<br><img src="http://img.blog.csdn.net/20161205203119690" alt="这里写图片描述"></p>
+<p>2016年12月05日21:59:25更新：<br>在 ~/.bashrc 中进行设置，不然每次重新打开终端都要重新配置！！。。。<br>vim ~/.bashrc<br>在底下加入上面那些<br>同样要使配置生效<br>source ~/.bashrc </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[sql之left join、right join、inner join的区别]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/sql%E4%B9%8Bleft%20join%E3%80%81right%20join%E3%80%81inner%20join%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>sql之left join、right join、inner join的区别</p>
+<p>left join(左联接) 返回包括左表中的所有记录和右表中联结字段相等的记录<br>right join(右联接) 返回包括右表中的所有记录和左表中联结字段相等的记录<br>inner join(等值连接) 只返回两个表中联结字段相等的行</p>
+<h2 id="举例如下："><a href="#举例如下：" class="headerlink" title="举例如下： "></a>举例如下： </h2><p>表A记录如下：<br>aID　　　　　aNum<br>1　　　　　a20050111<br>2　　　　　a20050112<br>3　　　　　a20050113<br>4　　　　　a20050114<br>5　　　　　a20050115</p>
+<p>表B记录如下:<br>bID　　　　　bName<br>1　　　　　2006032401<br>2　　　　　2006032402<br>3　　　　　2006032403<br>4　　　　　2006032404<br>8　　　　　2006032408</p>
+<hr>
+<p>1.left join<br>sql语句如下:<br>select * from A<br>left join B<br>on A.aID = B.bID</p>
+<p>结果如下:<br>aID　　　　　aNum　　　　　bID　　　　　bName<br>1　　　　　a20050111　　　　1　　　　　2006032401<br>2　　　　　a20050112　　　　2　　　　　2006032402<br>3　　　　　a20050113　　　　3　　　　　2006032403<br>4　　　　　a20050114　　　　4　　　　　2006032404<br>5　　　　　a20050115　　　　NULL　　　　　NULL</p>
+<p>（所影响的行数为 5 行）<br>结果说明:<br>left join是以A表的记录为基础的,A可以看成左表,B可以看成右表,left join是以左表为准的.<br>换句话说,左表(A)的记录将会全部表示出来,而右表(B)只会显示符合搜索条件的记录(例子中为: A.aID = B.bID).</p>
+<h2 id="B表记录不足的地方均为NULL"><a href="#B表记录不足的地方均为NULL" class="headerlink" title="B表记录不足的地方均为NULL."></a>B表记录不足的地方均为NULL.</h2><p>2.right join<br>sql语句如下:<br>select * from A<br>right join B<br>on A.aID = B.bID</p>
+<p>结果如下:<br>aID　　　　　aNum　　　　　bID　　　　　bName<br>1　　　　　a20050111　　　　1　　　　　2006032401<br>2　　　　　a20050112　　　　2　　　　　2006032402<br>3　　　　　a20050113　　　　3　　　　　2006032403<br>4　　　　　a20050114　　　　4　　　　　2006032404<br>NULL　　　　　NULL　　　　　8　　　　　2006032408</p>
+<p>（所影响的行数为 5 行）<br>结果说明:</p>
+<h2 id="仔细观察一下-就会发现-和left-join的结果刚好相反-这次是以右表-B-为基础的-A表不足的地方用NULL填充"><a href="#仔细观察一下-就会发现-和left-join的结果刚好相反-这次是以右表-B-为基础的-A表不足的地方用NULL填充" class="headerlink" title="仔细观察一下,就会发现,和left join的结果刚好相反,这次是以右表(B)为基础的,A表不足的地方用NULL填充."></a>仔细观察一下,就会发现,和left join的结果刚好相反,这次是以右表(B)为基础的,A表不足的地方用NULL填充.</h2><p>3.inner join<br>sql语句如下:<br>select * from A<br>innerjoin B<br>on A.aID = B.bID</p>
+<p>结果如下:<br>aID　　　　　aNum　　　　　bID　　　　　bName<br>1　　　　　a20050111　　　　1　　　　　2006032401<br>2　　　　　a20050112　　　　2　　　　　2006032402<br>3　　　　　a20050113　　　　3　　　　　2006032403<br>4　　　　　a20050114　　　　4　　　　　2006032404</p>
+<p>结果说明:</p>
+<h2 id="很明显-这里只显示出了-A-aID-B-bID的记录-这说明inner-join并不以谁为基础-它只显示符合条件的记录"><a href="#很明显-这里只显示出了-A-aID-B-bID的记录-这说明inner-join并不以谁为基础-它只显示符合条件的记录" class="headerlink" title="很明显,这里只显示出了 A.aID = B.bID的记录.这说明inner join并不以谁为基础,它只显示符合条件的记录."></a>很明显,这里只显示出了 A.aID = B.bID的记录.这说明inner join并不以谁为基础,它只显示符合条件的记录.</h2><p>注:<br>LEFT JOIN操作用于在任何的 FROM 子句中，组合来源表的记录。使用 LEFT JOIN 运算来创建一个左边外部联接。左边外部联接将包含了从第一个（左边）开始的两个表中的全部记录，即使在第二个（右边）表中并没有相符值的记录。</p>
+<p>语法：FROM table1 LEFT JOIN table2 ON table1.field1 compopr table2.field2</p>
+<p>说明：table1, table2参数用于指定要将记录组合的表的名称。<br>field1, field2参数指定被联接的字段的名称。且这些字段必须有相同的数据类型及包含相同类型的数据，但它们不需要有相同的名称。<br>compopr参数指定关系比较运算符：”=”， “&lt;”， “&gt;”， “&lt;=”， “&gt;=” 或 “&lt;&gt;”。<br>如果在INNER JOIN操作中要联接包含Memo 数据类型或 OLE Object 数据类型数据的字段，将会发生错误. </p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[EJB会话bean，无状态会话bean和有状态会话bean]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/EJB%E4%BC%9A%E8%AF%9Dbean%EF%BC%8C%E6%97%A0%E7%8A%B6%E6%80%81%E4%BC%9A%E8%AF%9Dbean%E5%92%8C%E6%9C%89%E7%8A%B6%E6%80%81%E4%BC%9A%E8%AF%9Dbean/</url>
       <content type="html"><![CDATA[<p>搞了一晚上加一白天，最后下了个jboss5终于好了。。。每次都是jboss配置问题。。。</p>
@@ -100,14 +145,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<hr>
-<p>都是跳转。</p>
-<hr>
-<p>response.sendRedirect()是跳转发生在客户端，地址栏变化。forward动作转向发生在服务端，地址栏不变。<br>forward不会产生新的请求，而是将原请求转发给新的资源。forward仍保留request的信息；</p>
-<hr>
-<p>sendRedirect会产生新的请求。sendRedirect则将开始一个新的request，原有的request全部失效</p>
+      <title><![CDATA[git的公钥和私钥]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/</url>
+      <content type="html"><![CDATA[<p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
 ]]></content>
     </entry>
     
@@ -121,17 +161,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[git的公钥和私钥]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/</url>
-      <content type="html"><![CDATA[<p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
-      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
-<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
+      <title><![CDATA[jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<hr>
+<p>都是跳转。</p>
+<hr>
+<p>response.sendRedirect()是跳转发生在客户端，地址栏变化。forward动作转向发生在服务端，地址栏不变。<br>forward不会产生新的请求，而是将原请求转发给新的资源。forward仍保留request的信息；</p>
+<hr>
+<p>sendRedirect会产生新的请求。sendRedirect则将开始一个新的request，原有的request全部失效</p>
 ]]></content>
     </entry>
     
@@ -153,6 +190,14 @@
 <p>这样直接访问xxx.xxx.com就可以访问你设置的默认目录了。</p>
 <hr>
 <p>我也将我的网站设置了默认访问的目录<br>另外附上我的我的个人网站 简易BBS：<a href="http://www.nwafulive.cn/" target="_blank" rel="external">http://www.nwafulive.cn/</a><br>欢迎访问！</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
+      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
+<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
 ]]></content>
     </entry>
     
