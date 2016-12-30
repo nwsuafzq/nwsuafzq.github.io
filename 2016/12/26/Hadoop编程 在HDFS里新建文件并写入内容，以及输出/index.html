@@ -228,7 +228,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/tomcat/">
-                    tomcat <span class="right">1 篇</span></a>
+                    tomcat <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -340,6 +340,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">package output;</div><div class="line"></div><div class="line">import java.io.IOException;</div><div class="line"></div><div class="line">import org.apache.hadoop.conf.Configuration;</div><div class="line">import org.apache.hadoop.fs.FSDataInputStream;</div><div class="line">import org.apache.hadoop.fs.FSDataOutputStream;</div><div class="line">import org.apache.hadoop.fs.FileSystem;</div><div class="line">import org.apache.hadoop.fs.Path;</div><div class="line"></div><div class="line">public class Read &#123;</div><div class="line">	public static void main(String[] args) throws IOException &#123;</div><div class="line">		Configuration conf=new Configuration();</div><div class="line">		conf.set(&quot;fs.default.name&quot;, &quot;hdfs://localhost:9000&quot;);</div><div class="line">		Path inFile =new Path(&quot;/user/hadoop/hadoopfile/t1&quot;);</div><div class="line">		FileSystem hdfs=FileSystem.get(conf);</div><div class="line">		FSDataInputStream inputStream=hdfs.open(inFile);</div><div class="line">		System.out.println(&quot;myfile:&quot;+inputStream.readUTF());</div><div class="line">		inputStream.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
                 
+<p class="pink-link-context">
+    <a href="/2016/12/30/tomcat中配置二级域名/" rel="next" title="tomcat中配置二级域名">
+    上一篇：tomcat中配置二级域名
+  </a>
+</p>
+
 
 
 <p class="pink-link-context">

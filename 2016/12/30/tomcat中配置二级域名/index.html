@@ -7,7 +7,7 @@
 
     
 
-    <title>Linux下安装Git | 所长的blog</title>
+    <title>tomcat中配置二级域名 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="Linux下安装Git"/>
+    <meta property="og:title" content="tomcat中配置二级域名"/>
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -288,7 +288,7 @@
             
     
     
-    <a class="breadcrumb" href="/categories/git/">git</a>
+    <a class="breadcrumb" href="/categories/tomcat/">tomcat</a>
 
 
         
@@ -305,12 +305,12 @@
             <div class="article-title">
                 
     
-        <h1>Linux下安装Git</h1>
+        <h1>tomcat中配置二级域名</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-12-21T00:00:00.000Z"><a href="/2016/12/21/Linux下安装Git/">2016-12-21</a></time>
+            <time class="pink-link-context" datetime="2016-12-30T12:48:20.937Z"><a href="/2016/12/30/tomcat中配置二级域名/">2016-12-30</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -320,9 +320,11 @@
             
     <div class="tags-row">
         
-            <a href="/tags/git/" class="chip pink lighten-1">git</a>
+            <a href="/tags/服务器/" class="chip pink lighten-1">服务器</a>
         
-            <a href="/tags/liunx/" class="chip pink lighten-1">liunx</a>
+            <a href="/tags/tomcat/" class="chip pink lighten-1">tomcat</a>
+        
+            <a href="/tags/域名/" class="chip pink lighten-1">域名</a>
         
     </div>
 
@@ -333,20 +335,14 @@
 
 
             <div class="entry pink-link-context">
-                <p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
-
+                <p>（1）开通泛域名支持，即java.book.cn,net.book.cn,www.books.cn都指向同一IP，如123.45.111.11<br>（2）修改tomcat目录下的conf/server.xml,在engine里面添加</p>
+<host name="localhost" debug="0" appbase="" unpackwars="true" xmlvalidation="false" xmlnamespaceaware="false"><br>       <logger classname="org.apache.catalina.logger.FileLogger" directory="logs" prefix="localhost_log." suffix=".txt" timestamp="true"><br>        <context path="" docbase="E:\\Tomcat5.0\\webapps\\book" reloadable="true" casesensitive="false" debug="0"></context><br> </logger></host><br> <host name="java.book.cn" debug="0" appbase="" unpackwars="true" xmlvalidation="false" xmlnamespaceaware="false"><br>       <alias>java.book.cn</alias><br>       <context path="" docbase="E:\\Tomcat5.0\\webapps\\java" reloadable="true" casesensitive="false" debug="0"></context><br> </host><br> <host name="net.book.cn" debug="0" appbase="" unpackwars="true" xmlvalidation="false" xmlnamespaceaware="false"><br>       <alias>net.book.cn</alias><br>       <context path="" docbase="E:\\Tomcat5.0\\webapps\\net" reloadable="true" casesensitive="false" debug="0"></context><br> </host><br>  <host name="www.books.cn" debug="0" appbase="" unpackwars="true" xmlvalidation="false" xmlnamespaceaware="false"><br>       <alias>www.books.cn</alias><br>       <context path="" docbase="E:\\Tomcat5.0\\webapps\\books" reloadable="true" casesensitive="false" debug="0"></context><br> </host>
                 
-<p class="pink-link-context">
-    <a href="/2016/12/21/xmapp整合的Apache服务器更改端口号/" rel="next" title="xmapp整合的Apache服务器更改端口号">
-    上一篇：xmapp整合的Apache服务器更改端口号
-  </a>
-</p>
-
 
 
 <p class="pink-link-context">
-    <a href="/2016/12/21/tomcat服务器更改默认访问目录/" rel="next" title="tomcat服务器更改默认访问目录">
-    下一篇：tomcat服务器更改默认访问目录
+    <a href="/2016/12/26/Hadoop编程 在HDFS里新建文件并写入内容，以及输出/" rel="next" title="Hadoop编程 在HDFS里新建文件并写入内容，以及输出">
+    下一篇：Hadoop编程 在HDFS里新建文件并写入内容，以及输出
   </a>
 </p>
 
@@ -364,7 +360,7 @@
         <div class="card">
             <div class="card-content">
                 <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2016/12/21/Linux下安装Git/" data-title="Linux下安装Git" data-url="http://nwsuafzq.github.io/2016/12/21/Linux下安装Git/"></div>
+                <div class="ds-thread" data-thread-key="2016/12/30/tomcat中配置二级域名/" data-title="tomcat中配置二级域名" data-url="http://nwsuafzq.github.io/2016/12/30/tomcat中配置二级域名/"></div>
 
                 <script type="text/javascript">
                     console.log(document.querySelector('.ds-thread'));
