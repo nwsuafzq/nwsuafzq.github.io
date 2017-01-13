@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2016-12-30T12:49:52.951Z</updated>
+  <updated>2017-01-13T13:34:08.379Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python爬虫 爬西农教务管理系统查成绩</title>
+    <link href="http://nwsuafzq.github.io/2017/01/13/2017%E5%B9%B41%E6%9C%8813%E6%97%A5python%E7%88%AC%E6%95%99%E5%8A%A1%E7%AE%A1%E7%90%86%E6%88%90%E7%BB%A9/"/>
+    <id>http://nwsuafzq.github.io/2017/01/13/2017年1月13日python爬教务管理成绩/</id>
+    <published>2017-01-13T13:23:18.451Z</published>
+    <updated>2017-01-13T13:34:08.379Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是python2的。&lt;br&gt;用到了pytesseract来做验证码识别自动填验证码，不过识别率不是很高，识别一些简单的验证码还好。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://nwsuafzq.github.io/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://nwsuafzq.github.io/tags/python/"/>
+    
+      <category term="爬虫" scheme="http://nwsuafzq.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>tomcat中配置二级域名</title>
@@ -228,6 +250,28 @@
   </entry>
   
   <entry>
+    <title>JSP作用对象小结</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/jsp对象作用范围小结/</id>
+    <published>2016-12-26T00:00:00.000Z</published>
+    <updated>2016-12-26T09:57:45.768Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有page；request；session；application&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;page范围：&lt;br&gt;在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。&lt;br&gt;request范围：&lt;br&gt;可以在请求对象产生后、响应完成前，被请求的
+    
+    </summary>
+    
+      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
+    
+    
+      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别</title>
     <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://nwsuafzq.github.io/2016/12/26/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/</id>
@@ -290,28 +334,6 @@
     
     
       <category term="git" scheme="http://nwsuafzq.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSP作用对象小结</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/jsp对象作用范围小结/</id>
-    <published>2016-12-26T00:00:00.000Z</published>
-    <updated>2016-12-26T09:57:45.768Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有page；request；session；application&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;page范围：&lt;br&gt;在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。&lt;br&gt;request范围：&lt;br&gt;可以在请求对象产生后、响应完成前，被请求的
-    
-    </summary>
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
-    
-    
-      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
     
   </entry>
   
@@ -445,22 +467,6 @@
     
     
       <category term="算法" scheme="http://nwsuafzq.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://nwsuafzq.github.io/2016/12/20/hello-world/"/>
-    <id>http://nwsuafzq.github.io/2016/12/20/hello-world/</id>
-    <published>2016-12-20T10:07:12.690Z</published>
-    <updated>2016-12-20T14:45:52.192Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   
