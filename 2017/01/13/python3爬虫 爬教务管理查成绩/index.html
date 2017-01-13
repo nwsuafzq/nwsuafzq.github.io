@@ -7,7 +7,7 @@
 
     
 
-    <title>liunx | 所长的blog</title>
+    <title>python3爬虫 爬教务管理查成绩 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="python3爬虫 爬教务管理查成绩"/>
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -289,30 +289,105 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/Python/">Python</a>
+
 
         
-            <a class="breadcrumb" href="/tags/liunx/">liunx</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>python3爬虫 爬教务管理查成绩</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-01-13T13:37:45.965Z"><a href="/2017/01/13/python3爬虫 爬教务管理查成绩/">2017-01-13</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2016/12/21/Linux下安装Git/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-12-21T00:00:00.000Z">2016-12-21</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Linux下安装Git
-            </a>
+            <a href="/tags/python/" class="chip pink lighten-1">python</a>
+        
+            <a href="/tags/爬虫/" class="chip pink lighten-1">爬虫</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry pink-link-context">
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># *********************************</div><div class="line">#       vresion：python3</div><div class="line">#         author:张琼</div><div class="line">#       西北农林科技大学 计算机141</div><div class="line"># *********************************</div><div class="line">from urllib import request,parse</div><div class="line">import http.cookiejar</div><div class="line">import urllib</div><div class="line">import re</div><div class="line">import io</div><div class="line">from PIL import Image</div><div class="line">import pytesseract</div><div class="line">#模拟登录测试模块</div><div class="line">print(&apos;loging info my ssfw&apos;)</div><div class="line">cookie=http.cookiejar.CookieJar()#储存获取到的cookie</div><div class="line">opener=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie))</div><div class="line">CaptchaUrl = &quot;http://jwgl.nwsuaf.edu.cn/academic/getCaptcha.do&quot; #验证码图片URL</div><div class="line">picture = opener.open(CaptchaUrl).read()</div><div class="line">local = open(&apos;e:/image1.jpg&apos;, &apos;wb&apos;)</div><div class="line">local.write(picture) #验证码图片保存下来</div><div class="line">local.close()</div><div class="line"># img=Image.open(&apos;e:/image1.jpg&apos;)</div><div class="line"># vcode = pytesseract.image_to_string(img)</div><div class="line"># print(vcode)</div><div class="line"></div><div class="line">SecretCode = input(&apos;输入验证码： &apos;) #自己查看图片然后输入</div><div class="line">print(SecretCode)</div><div class="line">loging_data=parse.urlencode([</div><div class="line">    (&apos;j_username&apos;,&quot;2014012528&quot;),</div><div class="line">    (&apos;j_password&apos;,&quot;3976966&quot;),</div><div class="line">    (&apos;j_captcha&apos;,SecretCode)])#POST用到的数据</div><div class="line"></div><div class="line">#请求头</div><div class="line">headers = &#123;</div><div class="line">    &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 &apos;+</div><div class="line">    &apos;(KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#构造request</div><div class="line">req=request.Request(url=&apos;http://jwgl.nwsuaf.edu.cn/academic/j_acegi_security_check&apos;,</div><div class="line">                    data=loging_data.encode(encoding=&apos;utf-8&apos;),</div><div class="line">                    headers=headers)</div><div class="line">try:</div><div class="line">    result=opener.open(req)#访问请求的链接</div><div class="line">    # print(result.read().decode(&apos;utf-8&apos;))</div><div class="line">except urllib.error.HTTPError:</div><div class="line">    print(&quot;connect failed&quot;)</div><div class="line">try:</div><div class="line">    result=opener.open(&apos;http://jwgl.nwsuaf.edu.cn/academic/manager/score/studentOwnScore.do?groupId=&amp;moduleId=2021&apos;)#进入教务系统个人成绩信息界面</div><div class="line">    print(result.read().decode(&apos;utf-8&apos;))</div><div class="line">except urllib.error.HTTPError:</div><div class="line">    print(&quot;error&quot;)</div></pre></td></tr></table></figure>
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/01/13/2017年1月13日python爬教务管理成绩/" rel="next" title="python爬虫 爬西农教务管理系统查成绩">
+    下一篇：python爬虫 爬西农教务管理系统查成绩
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/01/13/python3爬虫 爬教务管理查成绩/" data-title="python3爬虫 爬教务管理查成绩" data-url="http://nwsuafzq.github.io/2017/01/13/python3爬虫 爬教务管理查成绩/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangqiong'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>

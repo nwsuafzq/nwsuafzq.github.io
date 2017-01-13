@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2017-01-13T13:34:08.379Z</updated>
+  <updated>2017-01-13T13:37:47.292Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python3爬虫 爬教务管理查成绩</title>
+    <link href="http://nwsuafzq.github.io/2017/01/13/python3%E7%88%AC%E8%99%AB%20%E7%88%AC%E6%95%99%E5%8A%A1%E7%AE%A1%E7%90%86%E6%9F%A5%E6%88%90%E7%BB%A9/"/>
+    <id>http://nwsuafzq.github.io/2017/01/13/python3爬虫 爬教务管理查成绩/</id>
+    <published>2017-01-13T13:37:45.965Z</published>
+    <updated>2017-01-13T13:37:47.292Z</updated>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+    
+    </summary>
+    
+      <category term="Python" scheme="http://nwsuafzq.github.io/categories/Python/"/>
+    
+    
+      <category term="python" scheme="http://nwsuafzq.github.io/tags/python/"/>
+    
+      <category term="爬虫" scheme="http://nwsuafzq.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>python爬虫 爬西农教务管理系统查成绩</title>
@@ -272,6 +294,26 @@
   </entry>
   
   <entry>
+    <title>git的公钥和私钥</title>
+    <link href="http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/"/>
+    <id>http://nwsuafzq.github.io/2016/12/26/git的公钥和私钥/</id>
+    <published>2016-12-26T00:00:00.000Z</published>
+    <updated>2016-12-26T13:51:47.126Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.GIT服务器上存储的是&lt;strong&gt;公钥&lt;/strong&gt;，你本地存储的是&lt;strong&gt;私钥&lt;/strong&gt;，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以&lt;strong&gt;公钥可
+    
+    </summary>
+    
+      <category term="git" scheme="http://nwsuafzq.github.io/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://nwsuafzq.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别</title>
     <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://nwsuafzq.github.io/2016/12/26/jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别/</id>
@@ -318,26 +360,6 @@
   </entry>
   
   <entry>
-    <title>git的公钥和私钥</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/git的公钥和私钥/</id>
-    <published>2016-12-26T00:00:00.000Z</published>
-    <updated>2016-12-26T13:51:47.126Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.GIT服务器上存储的是&lt;strong&gt;公钥&lt;/strong&gt;，你本地存储的是&lt;strong&gt;私钥&lt;/strong&gt;，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以&lt;strong&gt;公钥可
-    
-    </summary>
-    
-      <category term="git" scheme="http://nwsuafzq.github.io/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://nwsuafzq.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>xmapp整合的Apache服务器更改端口号</title>
     <link href="http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/"/>
     <id>http://nwsuafzq.github.io/2016/12/21/xmapp整合的Apache服务器更改端口号/</id>
@@ -362,6 +384,28 @@
   </entry>
   
   <entry>
+    <title>tomcat服务器更改默认访问目录</title>
+    <link href="http://nwsuafzq.github.io/2016/12/21/tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95/"/>
+    <id>http://nwsuafzq.github.io/2016/12/21/tomcat服务器更改默认访问目录/</id>
+    <published>2016-12-21T00:00:00.000Z</published>
+    <updated>2016-12-26T14:15:33.010Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;比如说我原来是访问&lt;a href=&quot;http://xxx.xxx.com/test&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xxx.xxx.com/test&lt;/a&gt; 想改成直接访问域名&lt;a href=&quot;http://xxx.xxx.co
+    
+    </summary>
+    
+      <category term="tomcat" scheme="http://nwsuafzq.github.io/categories/tomcat/"/>
+    
+    
+      <category term="服务器" scheme="http://nwsuafzq.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="tomcat" scheme="http://nwsuafzq.github.io/tags/tomcat/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux下安装Git</title>
     <link href="http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/"/>
     <id>http://nwsuafzq.github.io/2016/12/21/Linux下安装Git/</id>
@@ -381,28 +425,6 @@
       <category term="git" scheme="http://nwsuafzq.github.io/tags/git/"/>
     
       <category term="liunx" scheme="http://nwsuafzq.github.io/tags/liunx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tomcat服务器更改默认访问目录</title>
-    <link href="http://nwsuafzq.github.io/2016/12/21/tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95/"/>
-    <id>http://nwsuafzq.github.io/2016/12/21/tomcat服务器更改默认访问目录/</id>
-    <published>2016-12-21T00:00:00.000Z</published>
-    <updated>2016-12-26T14:15:33.010Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;比如说我原来是访问&lt;a href=&quot;http://xxx.xxx.com/test&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xxx.xxx.com/test&lt;/a&gt; 想改成直接访问域名&lt;a href=&quot;http://xxx.xxx.co
-    
-    </summary>
-    
-      <category term="tomcat" scheme="http://nwsuafzq.github.io/categories/tomcat/"/>
-    
-    
-      <category term="服务器" scheme="http://nwsuafzq.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="tomcat" scheme="http://nwsuafzq.github.io/tags/tomcat/"/>
     
   </entry>
   
@@ -447,26 +469,6 @@
       <category term="Hexo" scheme="http://nwsuafzq.github.io/tags/Hexo/"/>
     
       <category term="github" scheme="http://nwsuafzq.github.io/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法 动态规划 循环赛问题</title>
-    <link href="http://nwsuafzq.github.io/2016/12/20/%E7%AE%97%E6%B3%95%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%20%E5%BE%AA%E7%8E%AF%E8%B5%9B%E9%97%AE%E9%A2%98/"/>
-    <id>http://nwsuafzq.github.io/2016/12/20/算法 动态规划 循环赛问题/</id>
-    <published>2016-12-20T13:46:38.452Z</published>
-    <updated>2016-12-23T13:18:30.603Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;动态规划算法&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class
-    
-    </summary>
-    
-      <category term="算法" scheme="http://nwsuafzq.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://nwsuafzq.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
