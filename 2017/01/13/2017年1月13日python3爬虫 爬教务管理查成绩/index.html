@@ -266,6 +266,14 @@
 
         
 
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/接口技术/">
+                    接口技术 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
     </ul>
 </div>
 
@@ -343,6 +351,12 @@
             <div class="entry pink-link-context">
                 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># *********************************</div><div class="line">#       vresion：python3</div><div class="line">#         author:张琼</div><div class="line">#       西北农林科技大学 计算机141</div><div class="line"># *********************************</div><div class="line">from urllib import request,parse</div><div class="line">import http.cookiejar</div><div class="line">import urllib</div><div class="line">import re</div><div class="line">import io</div><div class="line">from PIL import Image</div><div class="line">import pytesseract</div><div class="line">#模拟登录测试模块</div><div class="line">print(&apos;loging info my ssfw&apos;)</div><div class="line">cookie=http.cookiejar.CookieJar()#储存获取到的cookie</div><div class="line">opener=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie))</div><div class="line">CaptchaUrl = &quot;http://jwgl.nwsuaf.edu.cn/academic/getCaptcha.do&quot; #验证码图片URL</div><div class="line">picture = opener.open(CaptchaUrl).read()</div><div class="line">local = open(&apos;e:/image1.jpg&apos;, &apos;wb&apos;)</div><div class="line">local.write(picture) #验证码图片保存下来</div><div class="line">local.close()</div><div class="line"># img=Image.open(&apos;e:/image1.jpg&apos;)</div><div class="line"># vcode = pytesseract.image_to_string(img)</div><div class="line"># print(vcode)</div><div class="line"></div><div class="line">SecretCode = input(&apos;输入验证码： &apos;) #自己查看图片然后输入</div><div class="line">print(SecretCode)</div><div class="line">loging_data=parse.urlencode([</div><div class="line">    (&apos;j_username&apos;,&quot;2014012528&quot;),</div><div class="line">    (&apos;j_password&apos;,&quot;3976966&quot;),</div><div class="line">    (&apos;j_captcha&apos;,SecretCode)])#POST用到的数据</div><div class="line"></div><div class="line">#请求头</div><div class="line">headers = &#123;</div><div class="line">    &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 &apos;+</div><div class="line">    &apos;(KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#构造request</div><div class="line">req=request.Request(url=&apos;http://jwgl.nwsuaf.edu.cn/academic/j_acegi_security_check&apos;,</div><div class="line">                    data=loging_data.encode(encoding=&apos;utf-8&apos;),</div><div class="line">                    headers=headers)</div><div class="line">try:</div><div class="line">    result=opener.open(req)#访问请求的链接</div><div class="line">    # print(result.read().decode(&apos;utf-8&apos;))</div><div class="line">except urllib.error.HTTPError:</div><div class="line">    print(&quot;connect failed&quot;)</div><div class="line">try:</div><div class="line">    result=opener.open(&apos;http://jwgl.nwsuaf.edu.cn/academic/manager/score/studentOwnScore.do?groupId=&amp;moduleId=2021&apos;)#进入教务系统个人成绩信息界面</div><div class="line">    print(result.read().decode(&apos;utf-8&apos;))</div><div class="line">except urllib.error.HTTPError:</div><div class="line">    print(&quot;error&quot;)</div></pre></td></tr></table></figure>
                 
+<p class="pink-link-context">
+    <a href="/2017/01/14/2017年1月14日 接口技术-数码管日历表/" rel="next" title="数码管日历表">
+    上一篇：数码管日历表
+  </a>
+</p>
+
 
 
 <p class="pink-link-context">

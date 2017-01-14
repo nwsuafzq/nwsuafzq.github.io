@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2017-01-13T13:37:47.292Z</updated>
+  <updated>2017-01-14T07:22:34.837Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数码管日历表</title>
+    <link href="http://nwsuafzq.github.io/2017/01/14/2017%E5%B9%B41%E6%9C%8814%E6%97%A5%20%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF-%E6%95%B0%E7%A0%81%E7%AE%A1%E6%97%A5%E5%8E%86%E8%A1%A8/"/>
+    <id>http://nwsuafzq.github.io/2017/01/14/2017年1月14日 接口技术-数码管日历表/</id>
+    <published>2017-01-14T07:19:21.296Z</published>
+    <updated>2017-01-14T07:22:34.837Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用到8253 8259 8279，七段数码管。键盘，显示屏等外设&lt;br&gt;;连线说明&lt;br&gt;;E5区 ：CLK(8279)   ————  B2区：2M&lt;br&gt;;E5区 ：CS(8279)、A0     ————  A3区：CS5、A0&lt;br&gt;;E5区 ：A、B、C、D(82
+    
+    </summary>
+    
+      <category term="接口技术" scheme="http://nwsuafzq.github.io/categories/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="接口技术" scheme="http://nwsuafzq.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="汇编语言" scheme="http://nwsuafzq.github.io/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>python3爬虫 爬教务管理查成绩</title>
@@ -360,30 +382,6 @@
   </entry>
   
   <entry>
-    <title>xmapp整合的Apache服务器更改端口号</title>
-    <link href="http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/"/>
-    <id>http://nwsuafzq.github.io/2016/12/21/xmapp整合的Apache服务器更改端口号/</id>
-    <published>2016-12-21T00:00:00.000Z</published>
-    <updated>2016-12-26T14:16:14.459Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我的云服务器上运行着tomcat和xmapp整合的Apache服务器。&lt;br&gt;我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20161129170634598&quot; 
-    
-    </summary>
-    
-      <category term="xmapp" scheme="http://nwsuafzq.github.io/categories/xmapp/"/>
-    
-    
-      <category term="服务器" scheme="http://nwsuafzq.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="xmapp" scheme="http://nwsuafzq.github.io/tags/xmapp/"/>
-    
-      <category term="Apache" scheme="http://nwsuafzq.github.io/tags/Apache/"/>
-    
-  </entry>
-  
-  <entry>
     <title>tomcat服务器更改默认访问目录</title>
     <link href="http://nwsuafzq.github.io/2016/12/21/tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95/"/>
     <id>http://nwsuafzq.github.io/2016/12/21/tomcat服务器更改默认访问目录/</id>
@@ -429,6 +427,30 @@
   </entry>
   
   <entry>
+    <title>xmapp整合的Apache服务器更改端口号</title>
+    <link href="http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/"/>
+    <id>http://nwsuafzq.github.io/2016/12/21/xmapp整合的Apache服务器更改端口号/</id>
+    <published>2016-12-21T00:00:00.000Z</published>
+    <updated>2016-12-26T14:16:14.459Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我的云服务器上运行着tomcat和xmapp整合的Apache服务器。&lt;br&gt;我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20161129170634598&quot; 
+    
+    </summary>
+    
+      <category term="xmapp" scheme="http://nwsuafzq.github.io/categories/xmapp/"/>
+    
+    
+      <category term="服务器" scheme="http://nwsuafzq.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="xmapp" scheme="http://nwsuafzq.github.io/tags/xmapp/"/>
+    
+      <category term="Apache" scheme="http://nwsuafzq.github.io/tags/Apache/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo部署时ERROR Deployer not found:&quot;Git&quot;</title>
     <link href="http://nwsuafzq.github.io/2016/12/20/2222/"/>
     <id>http://nwsuafzq.github.io/2016/12/20/2222/</id>
@@ -438,28 +460,6 @@
     <summary type="html">
     
       &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
-    
-    </summary>
-    
-      <category term="Hexo相关" scheme="http://nwsuafzq.github.io/categories/Hexo%E7%9B%B8%E5%85%B3/"/>
-    
-    
-      <category term="Hexo" scheme="http://nwsuafzq.github.io/tags/Hexo/"/>
-    
-      <category term="github" scheme="http://nwsuafzq.github.io/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo部署后会自动删除CNAME、图片等文件</title>
-    <link href="http://nwsuafzq.github.io/2016/12/20/hexo%E9%83%A8%E7%BD%B2%E5%90%8E%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4/"/>
-    <id>http://nwsuafzq.github.io/2016/12/20/hexo部署后会自动删除/</id>
-    <published>2016-12-20T15:19:26.095Z</published>
-    <updated>2016-12-23T13:13:56.953Z</updated>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
     
     </summary>
     
