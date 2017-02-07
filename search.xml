@@ -4,6 +4,14 @@
   
     
     <entry>
+      <title><![CDATA[python2 爬虫 自动签到]]></title>
+      <url>http://nwsuafzq.github.io/2017/02/07/2017%E5%B9%B42%E6%9C%887%E6%97%A5python2%20%E7%88%AC%E8%99%AB%20%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0/</url>
+      <content type="html"><![CDATA[<p>为了在某ss帐号提供网站那里签到获得免费流量，又懒得每天点，于是想要自动签到<br>类似的网站原理类似。</p>
+<p>用了sleep每24h循环一次。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">#coding=utf8</div><div class="line">import time</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># *********************************</div><div class="line">#        自动签到某网站</div><div class="line">#       vresion：python 2</div><div class="line">#         author:张琼</div><div class="line">#       西北农林科技大学 计算机141</div><div class="line"># *********************************</div><div class="line">#from urllib import request,parse</div><div class="line">import cookielib</div><div class="line">import urllib</div><div class="line">import urllib2</div><div class="line">import time</div><div class="line"># import re</div><div class="line"># import io</div><div class="line"># from PIL import Image</div><div class="line"># import pytesseract</div><div class="line"># import requests</div><div class="line">#模拟登录测试模块</div><div class="line"># print(&apos;loging info my ssfw&apos;)</div><div class="line"></div><div class="line">while True:</div><div class="line"></div><div class="line">    # time.sleep(3)</div><div class="line"></div><div class="line">    cookie=cookielib.CookieJar()#储存获取到的cookie</div><div class="line">    opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))</div><div class="line"></div><div class="line">    loging_data=urllib.urlencode([</div><div class="line">        (&apos;email&apos;,&quot;804194244@qq.com&quot;),</div><div class="line">        (&apos;passwd&apos;,&quot;abcd1234&quot;),</div><div class="line">        (&apos;remember_me&apos;,&apos;week&apos;)])#POST用到的数据</div><div class="line"></div><div class="line">    #请求头</div><div class="line">    headers = &#123;</div><div class="line">        &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0&apos;,</div><div class="line">        &apos;Host&apos; : &apos;free.hwss.pw&apos;,</div><div class="line">        # &apos;Origin&apos;:&apos;http://free.hwss.pw&apos;,</div><div class="line">        &apos;Accept&apos; :&apos;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&apos;,</div><div class="line">        # &apos;Accept-Encoding&apos;:&apos;gzip, deflate&apos;,</div><div class="line">        &apos;Accept-Language&apos;:&apos;zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3&apos;,</div><div class="line">        &apos;Referer&apos; : &apos;http://free.hwss.pw/user/login.php&apos;,</div><div class="line">        # Cookie:   user_pwd=b34c9391df229cd8a2a3a1c9d8c77cb8e489349c312f6; uid=429; user_email=804194244%40qq.com; __cfduid=d8ef321cdcb20f2206c28f8e37dc4e4d91486381093; PHPSESSID=m5s0fkchm31bvs76sqo3nt4tb2&apos;,</div><div class="line">        &apos;Connection&apos; : &apos;keep-alive&apos;,</div><div class="line">        # &apos;X-Requested-With&apos;:&apos;XMLHttpRequest&apos;,</div><div class="line">        # &apos;Content-Length&apos;:&apos;57&apos;,</div><div class="line">        # &apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded; charset=UTF-8&apos;,</div><div class="line">        &apos;Upgrade-Insecure-Requests&apos;:&apos;1&apos;,</div><div class="line">        # &apos;Cache-Control&apos;:&apos;max-age=0&apos;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    #构造request</div><div class="line">    req=urllib2.Request(url=&apos;http://free.hwss.pw/user/_login.php&apos;,</div><div class="line">                        data=loging_data.encode(encoding=&apos;utf-8&apos;),</div><div class="line">                        headers=headers)</div><div class="line">    try:</div><div class="line">        # req1 = session.post(&apos;http://ss.hwss.pw/user/login.php&apos;, data=loging_data, headers=headers)</div><div class="line">        result=opener.open(req)#访问请求的链接</div><div class="line"></div><div class="line">        print &apos;tttttttttttt&apos;</div><div class="line">        # print(result.read().decode(&apos;utf-8&apos;))</div><div class="line">    except urllib2.HTTPError:</div><div class="line">        print(&quot;connect failed&quot;)</div><div class="line">    try:</div><div class="line">        # print &apos;1111&apos;</div><div class="line">        # session.get(&apos;http://ss.hwss.pw/checkin.php&apos;, headers=headers)</div><div class="line">        # result=opener.open(&apos;http://free.hwss.pw/user/index.php&apos;)#进入教务系统个人成绩信息界面</div><div class="line">        # print &apos;2222&apos;</div><div class="line">        req=urllib2.Request(url=&apos;http://free.hwss.pw/user/_checkin.php&apos;,</div><div class="line">                        data=loging_data.encode(encoding=&apos;utf-8&apos;),</div><div class="line">                        headers=headers)</div><div class="line">        result2=opener.open(req)</div><div class="line">        # print (result2.read().decode(&apos;utf-8&apos;))</div><div class="line">        print &quot;ck1&quot;</div><div class="line">        #print(result.read().decode(&apos;utf-8&apos;))</div><div class="line">        #page=result.read()</div><div class="line">        #print (page)</div><div class="line">        # f=file(&quot;score.html&quot;,&quot;w&quot;) #写入一个html文件</div><div class="line">        # f.write(page)</div><div class="line">        # f.close()</div><div class="line"></div><div class="line"></div><div class="line">    except Exception,e:</div><div class="line">        print str(e)</div><div class="line"></div><div class="line">    print &quot;1 finished,plz wait&quot;</div><div class="line">    time.sleep(86401)</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[python2 爬虫 爬取微博用户的原创微博，和图片以及图片的链接]]></title>
       <url>http://nwsuafzq.github.io/2017/01/31/%E7%88%AC%E5%8F%96%E5%BE%AE%E5%8D%9A%E6%9F%90%E7%94%A8%E6%88%B7%E7%9A%84%E5%BE%AE%E5%8D%9A%E5%92%8C%E5%9B%BE%E7%89%87%E7%AD%89/</url>
       <content type="html"><![CDATA[<p>爬取微博用户的原创微博，和图片以及图片的链接(防止图片有下载不成功的，爬下来链接可以手动去下载不成功的）</p>
@@ -174,15 +182,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP作用对象小结]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
-      <content type="html"><![CDATA[<p>有page；request；session；application</p>
-<hr>
-<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<hr>
@@ -195,6 +194,22 @@
     </entry>
     
     <entry>
+      <title><![CDATA[git的公钥和私钥]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/</url>
+      <content type="html"><![CDATA[<p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JSP作用对象小结]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>有page；request；session；application</p>
+<hr>
+<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JSP与Servlet区别]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
@@ -203,9 +218,10 @@
     </entry>
     
     <entry>
-      <title><![CDATA[git的公钥和私钥]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/</url>
-      <content type="html"><![CDATA[<p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
+      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
+      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
+<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
 ]]></content>
     </entry>
     
@@ -213,14 +229,6 @@
       <title><![CDATA[Linux下安装Git]]></title>
       <url>http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/</url>
       <content type="html"><![CDATA[<p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
-      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
-<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
 ]]></content>
     </entry>
     
