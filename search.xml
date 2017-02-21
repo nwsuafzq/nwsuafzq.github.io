@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[django自带的server 让外网主机访问]]></title>
+      <url>http://nwsuafzq.github.io/2017/02/21/django%E8%87%AA%E5%B8%A6%E7%9A%84server%20%E8%AE%A9%E5%A4%96%E7%BD%91%E4%B8%BB%E6%9C%BA%E8%AE%BF%E9%97%AE/</url>
+      <content type="html"><![CDATA[<p>命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Python manage.py runserver</div></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py runserver 0.0.0.0:80</div></pre></td></tr></table></figure>
+<p>外网和127.0.0.1都能够访问</p>
+<hr>
+<p>可能会出现DisallowedHost at / Invalid HTTP_HOST header:<br>DisallowedHost at /<br>Invalid HTTP_HOST header: ‘x:8000’. You may need to add u’10.211.55.6’ to ALLOWED_HOSTS.</p>
+<p>Request Method:    GET<br>Request URL:    <a href="http://x:8000/" target="_blank" rel="external">http://x:8000/</a><br>Django Version:    1.10.4<br>Exception Type:    DisallowedHost<br>Exception Value:<br>Invalid HTTP_HOST header: ‘10.211.55.6:8000’. You may need to add u’10.211.55.6’ to ALLOWED_HOSTS.<br>Exception Location:    /usr/lib/python2.7/site-packages/django/http/request.py in get_host, line 113<br>Python Executable:    /usr/bin/python<br>Python Version:</p>
+<p>1 以上时我访问请求的时候出现的，原因在于Django框架中的创建的一个项目的时候，<br>2 跑下这个命令：Python manage.py runserver ip:8000<br>3 然后在我本机的浏览器中写入上述IP和端口请求过去：<a href="http://ip:8000" target="_blank" rel="external">http://ip:8000</a><br>4 于是就出现了最上面的那个问题；<br>5 于是就去django-admin.py startproject project-name创建的项目中去修改 setting.py 文件：<br>ALLOWED_HOSTS = [‘*’]  ＃在这里请求的host添加了＊<br>6 于是就成功的访问到了Django的项目了；</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[python2 爬虫 自动签到]]></title>
       <url>http://nwsuafzq.github.io/2017/02/07/2017%E5%B9%B42%E6%9C%887%E6%97%A5python2%20%E7%88%AC%E8%99%AB%20%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0/</url>
       <content type="html"><![CDATA[<p>为了在某ss帐号提供网站那里签到获得免费流量，又懒得每天点，于是想要自动签到<br>类似的网站原理类似。</p>
@@ -182,6 +197,15 @@
     </entry>
     
     <entry>
+      <title><![CDATA[JSP作用对象小结]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>有page；request；session；application</p>
+<hr>
+<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<hr>
@@ -194,6 +218,14 @@
     </entry>
     
     <entry>
+      <title><![CDATA[JSP与Servlet区别]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
+<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[git的公钥和私钥]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/</url>
       <content type="html"><![CDATA[<p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
@@ -201,19 +233,16 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP作用对象小结]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
-      <content type="html"><![CDATA[<p>有page；request；session；application</p>
+      <title><![CDATA[tomcat服务器更改默认访问目录]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/21/tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>比如说我原来是访问<a href="http://xxx.xxx.com/test" target="_blank" rel="external">http://xxx.xxx.com/test</a> 想改成直接访问域名<a href="http://xxx.xxx.com/" target="_blank" rel="external">http://xxx.xxx.com/</a> 我查了相关了资料得出如下：<br>在X:\apache-tomcat-8.5.5\conf下有server.xml文件，里面</p>
+<p><host></host>之间加上Content标签，你可以理解为每个Content都代表一个应用。</p>
+<p>Content的具体属性为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;Context path =&quot;&quot; debug=&quot;0&quot; docBase =&quot;/test&quot; reloadable=&quot;true&quot; privileged=&quot;true&quot;&gt;</div><div class="line">&lt;/Context&gt;</div></pre></td></tr></table></figure>
+<p>这个里面最关键的就是docBase和path属性，docBase设置了path访问的目录。 docBase 的值可以是绝对路径也可以是相对于”appBase”的值的相对路径（appBase 是Host标签的属性）,path属性的值一定要是空字符串，他设置了访问路径。空字符串就代表没路径（也就是tomcat的默认路径），如果你设置为”/aaa”，那么你的访问路径就要在域名后加上”aaa”</p>
+<p>这样直接访问xxx.xxx.com就可以访问你设置的默认目录了。</p>
 <hr>
-<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[JSP与Servlet区别]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
-<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
+<p>我也将我的网站设置了默认访问的目录<br>另外附上我的我的个人网站 简易BBS：<a href="http://www.nwafulive.cn/" target="_blank" rel="external">http://www.nwafulive.cn/</a><br>欢迎访问！</p>
 ]]></content>
     </entry>
     
@@ -229,20 +258,6 @@
       <title><![CDATA[Linux下安装Git]]></title>
       <url>http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/</url>
       <content type="html"><![CDATA[<p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tomcat服务器更改默认访问目录]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/21/tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95/</url>
-      <content type="html"><![CDATA[<p>比如说我原来是访问<a href="http://xxx.xxx.com/test" target="_blank" rel="external">http://xxx.xxx.com/test</a> 想改成直接访问域名<a href="http://xxx.xxx.com/" target="_blank" rel="external">http://xxx.xxx.com/</a> 我查了相关了资料得出如下：<br>在X:\apache-tomcat-8.5.5\conf下有server.xml文件，里面</p>
-<p><host></host>之间加上Content标签，你可以理解为每个Content都代表一个应用。</p>
-<p>Content的具体属性为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;Context path =&quot;&quot; debug=&quot;0&quot; docBase =&quot;/test&quot; reloadable=&quot;true&quot; privileged=&quot;true&quot;&gt;</div><div class="line">&lt;/Context&gt;</div></pre></td></tr></table></figure>
-<p>这个里面最关键的就是docBase和path属性，docBase设置了path访问的目录。 docBase 的值可以是绝对路径也可以是相对于”appBase”的值的相对路径（appBase 是Host标签的属性）,path属性的值一定要是空字符串，他设置了访问路径。空字符串就代表没路径（也就是tomcat的默认路径），如果你设置为”/aaa”，那么你的访问路径就要在域名后加上”aaa”</p>
-<p>这样直接访问xxx.xxx.com就可以访问你设置的默认目录了。</p>
-<hr>
-<p>我也将我的网站设置了默认访问的目录<br>另外附上我的我的个人网站 简易BBS：<a href="http://www.nwafulive.cn/" target="_blank" rel="external">http://www.nwafulive.cn/</a><br>欢迎访问！</p>
 ]]></content>
     </entry>
     
