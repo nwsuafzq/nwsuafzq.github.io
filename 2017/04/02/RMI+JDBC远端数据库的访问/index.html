@@ -7,7 +7,7 @@
 
     
 
-    <title>hdfs | 所长的blog</title>
+    <title>RMI+JDBC远端数据库的访问 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="RMI+JDBC远端数据库的访问"/>
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -305,30 +305,113 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/中间件技术/">中间件技术</a>
+
 
         
-            <a class="breadcrumb" href="/tags/hdfs/">hdfs</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>RMI+JDBC远端数据库的访问</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-04-02T08:58:50.821Z"><a href="/2017/04/02/RMI+JDBC远端数据库的访问/">2017-04-02</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2016/12/26/Hadoop编程 在HDFS里新建文件并写入内容，以及输出/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-12-26T14:20:11.451Z">2016-12-26</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Hadoop编程 在HDFS里新建文件并写入内容，以及输出
-            </a>
+            <a href="/tags/Java/" class="chip pink lighten-1">Java</a>
+        
+            <a href="/tags/RMI/" class="chip pink lighten-1">RMI</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>实现简单的成绩查询系统（创建表，录入成绩，查询成绩等）。在服务器端，通过JDBC访问数据库。客户端调用服务端提供的各种数据库操作。</p>
+<hr>
+<p><img src="http://img.blog.csdn.net/20170402165246260?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<hr>
+<p>(1) 使用mysql-connector-java-5[1].0.8.zip驱动包，编写DBmanager类，访问mysql数据库，实现创建表，录入成绩，查询成绩等操作。<br>      （2）定义服务接口DataService，请参考RMI实例DataServie.java。提供创建表，录入成绩，查询成绩等操作（尽量与DBmanager类中的操作定义成同样的形式）。<br>      （3）实现服务，请参考RMI实例DataServiceImpl。对实现创建表，录入成绩，查询成绩等操作。实现过程中可直接使用DBmanager类。<br>      （4）编写部署类DeployServer，请参考RMI实例DeployServer.java。<br>      （5）使用DataService接口，实现客户端，请参考RMI实例RmiHelloClient.java。</p>
+<hr>
+<p>主要代码：<br>服务接口DataService：<br><img src="http://img.blog.csdn.net/20170402165600121?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>实现，调用了DBmanager类：<br><img src="http://img.blog.csdn.net/20170402165648340?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>部署类：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> zq.rmiserver;</div><div class="line"></div><div class="line"><span class="keyword">import</span> zq.rmiserver.impl.DataServiceImpl;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.net.MalformedURLException;</div><div class="line"><span class="keyword">import</span> java.rmi.Naming;</div><div class="line"><span class="keyword">import</span> java.rmi.RMISecurityManager;</div><div class="line"><span class="keyword">import</span> java.rmi.RemoteException;</div><div class="line"><span class="keyword">import</span> java.rmi.registry.LocateRegistry;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by zq on 2017/3/26.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeployServer</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DeployServer</span><span class="params">()</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(System.getSecurityManager()==<span class="keyword">null</span>)&#123;</div><div class="line">            System.setSecurityManager(<span class="keyword">new</span> RMISecurityManager());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            DataService ds = <span class="keyword">new</span> DataServiceImpl();</div><div class="line"></div><div class="line">            LocateRegistry.createRegistry(<span class="number">2555</span>);</div><div class="line"></div><div class="line">            Naming.rebind(<span class="string">"//localhost:2555/ds"</span>,ds);</div><div class="line">            System.out.println(<span class="string">"运行..."</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>客户端，使用DataService接口：<br><img src="http://img.blog.csdn.net/20170402165902669?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/04/02/基于CORBA技术开发一个考试成绩查询系统/" rel="next" title="基于CORBA技术开发一个考试成绩查询系统">
+    下一篇：基于CORBA技术开发一个考试成绩查询系统
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/04/02/RMI+JDBC远端数据库的访问/" data-title="RMI+JDBC远端数据库的访问" data-url="http://nwsuafzq.github.io/2017/04/02/RMI+JDBC远端数据库的访问/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangqiong'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>

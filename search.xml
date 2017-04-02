@@ -4,6 +4,20 @@
   
     
     <entry>
+      <title><![CDATA[RMI+JDBC远端数据库的访问]]></title>
+      <url>http://nwsuafzq.github.io/2017/04/02/RMI+JDBC%E8%BF%9C%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BF%E9%97%AE/</url>
+      <content type="html"><![CDATA[<p>实现简单的成绩查询系统（创建表，录入成绩，查询成绩等）。在服务器端，通过JDBC访问数据库。客户端调用服务端提供的各种数据库操作。</p>
+<hr>
+<p><img src="http://img.blog.csdn.net/20170402165246260?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<hr>
+<p>(1) 使用mysql-connector-java-5[1].0.8.zip驱动包，编写DBmanager类，访问mysql数据库，实现创建表，录入成绩，查询成绩等操作。<br>      （2）定义服务接口DataService，请参考RMI实例DataServie.java。提供创建表，录入成绩，查询成绩等操作（尽量与DBmanager类中的操作定义成同样的形式）。<br>      （3）实现服务，请参考RMI实例DataServiceImpl。对实现创建表，录入成绩，查询成绩等操作。实现过程中可直接使用DBmanager类。<br>      （4）编写部署类DeployServer，请参考RMI实例DeployServer.java。<br>      （5）使用DataService接口，实现客户端，请参考RMI实例RmiHelloClient.java。</p>
+<hr>
+<p>主要代码：<br>服务接口DataService：<br><img src="http://img.blog.csdn.net/20170402165600121?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>实现，调用了DBmanager类：<br><img src="http://img.blog.csdn.net/20170402165648340?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>部署类：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> zq.rmiserver;</div><div class="line"></div><div class="line"><span class="keyword">import</span> zq.rmiserver.impl.DataServiceImpl;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.net.MalformedURLException;</div><div class="line"><span class="keyword">import</span> java.rmi.Naming;</div><div class="line"><span class="keyword">import</span> java.rmi.RMISecurityManager;</div><div class="line"><span class="keyword">import</span> java.rmi.RemoteException;</div><div class="line"><span class="keyword">import</span> java.rmi.registry.LocateRegistry;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by zq on 2017/3/26.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeployServer</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DeployServer</span><span class="params">()</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(System.getSecurityManager()==<span class="keyword">null</span>)&#123;</div><div class="line">            System.setSecurityManager(<span class="keyword">new</span> RMISecurityManager());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            DataService ds = <span class="keyword">new</span> DataServiceImpl();</div><div class="line"></div><div class="line">            LocateRegistry.createRegistry(<span class="number">2555</span>);</div><div class="line"></div><div class="line">            Naming.rebind(<span class="string">"//localhost:2555/ds"</span>,ds);</div><div class="line">            System.out.println(<span class="string">"运行..."</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>客户端，使用DataService接口：<br><img src="http://img.blog.csdn.net/20170402165902669?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[基于CORBA技术开发一个考试成绩查询系统]]></title>
       <url>http://nwsuafzq.github.io/2017/04/02/%E5%9F%BA%E4%BA%8ECORBA%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E8%80%83%E8%AF%95%E6%88%90%E7%BB%A9%E6%9F%A5%E8%AF%A2%E7%B3%BB%E7%BB%9F/</url>
       <content type="html"><![CDATA[<p>主要包括：服务器部分：实现查询和录入服务；客户端部分包括录入和查询部分</p>
@@ -216,14 +230,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP与Servlet区别]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
-<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<hr>
@@ -236,15 +242,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP作用对象小结]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
-      <content type="html"><![CDATA[<p>有page；request；session；application</p>
-<hr>
-<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[git的公钥和私钥]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/git%E7%9A%84%E5%85%AC%E9%92%A5%E5%92%8C%E7%A7%81%E9%92%A5/</url>
       <content type="html"><![CDATA[<p>1.GIT服务器上存储的是<strong>公钥</strong>，你本地存储的是<strong>私钥</strong>，当你push本地代码库到远程代码库，服务器会要求你出示私钥，并且用你出示的私钥和它的公钥配对来完成认证。由于使用的是不对称加密，所以<strong>公钥可以公开，只要保管好私钥就可以</strong>。<br>2.<strong>路人甲只要没有私钥，所以无法push</strong>。这样才能保证开源项目的完整性，否则阿猫阿狗都去push代码，那项目不就乱套了？如果路人甲想对你的项目做出贡献，那么以GITHUB为例，他会发送一个pull request给你，然后由你来审核他作出的改变，如果审核通过，那么你就可以将他的pull request合并到你工程的某一分支中。这里只以GITHUB为例，私有的GIT服务器可能没有类似功能，比如GITLAB就没有pull request。 </p>
@@ -252,9 +249,19 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Linux下安装Git]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/</url>
-      <content type="html"><![CDATA[<p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
+      <title><![CDATA[JSP与Servlet区别]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
+<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JSP作用对象小结]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>有page；request；session；application</p>
+<hr>
+<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
 ]]></content>
     </entry>
     
@@ -277,6 +284,13 @@
 <p>这样直接访问xxx.xxx.com就可以访问你设置的默认目录了。</p>
 <hr>
 <p>我也将我的网站设置了默认访问的目录<br>另外附上我的我的个人网站 简易BBS：<a href="http://www.nwafulive.cn/" target="_blank" rel="external">http://www.nwafulive.cn/</a><br>欢迎访问！</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux下安装Git]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/</url>
+      <content type="html"><![CDATA[<p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
 ]]></content>
     </entry>
     
