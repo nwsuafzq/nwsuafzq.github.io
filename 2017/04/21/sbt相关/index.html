@@ -1,0 +1,800 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>sbt速度过慢解决 | 所长的blog</title>
+    <meta name="author" content="ZhangQiong">
+    
+    <meta name="description" content="hello world !!">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="sbt速度过慢解决"/>
+    <meta property="og:site_name" content="你们还要再学习一个"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="你们还要再学习一个" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="indigo">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">你们还要再学习一个</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav indigo darken-1" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="https://raw.githubusercontent.com/nwsuafzq/nwsuafzq.github.io/master/images/headphoto.jpg" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">张琼</p>
+                        <p class="desc">Java/Web前端/技术宅(误)</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav indigo darken-1" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/Hexo相关/">
+                    Hexo相关 <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/算法/">
+                    算法 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/Java-EE/">
+                    Java-EE <span class="right">5 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/git/">
+                    git <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/Java/">
+                    Java <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/EJB/">
+                    EJB <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/xmapp/">
+                    xmapp <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/tomcat/">
+                    tomcat <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/hadoop/">
+                    hadoop <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/linux/">
+                    linux <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/数据库/">
+                    数据库 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/Python/">
+                    Python <span class="right">5 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/接口技术/">
+                    接口技术 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/中间件技术/">
+                    中间件技术 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/maven/">
+                    maven <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/sbt/">
+                    sbt <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/sbt/">sbt</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>sbt速度过慢解决</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2017-04-21T09:33:30.700Z"><a href="/2017/04/21/sbt相关/">2017-04-21</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/spark/" class="chip pink lighten-1">spark</a>
+        
+            <a href="/tags/sbt/" class="chip pink lighten-1">sbt</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#安装sbt"><span class="section table-of-contents-text">安装sbt</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#1-下载sbt-launch-jar-并存放至-usr-local-sbt-sbtlaunch"><span class="section table-of-contents-text">1.下载sbt-launch.jar,并存放至/usr/local/sbt/sbtlaunch</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#2-需要修改其中的-sbt-sbt-boot-properties文件-将-repositories-处修改为如下内容"><span class="section table-of-contents-text">2.需要修改其中的./sbt/sbt.boot.properties文件,将[repositories]处修改为如下内容</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#3-删除原来的sbt-launch-文件，然后重新打包"><span class="section table-of-contents-text">3.删除原来的sbt-launch.文件，然后重新打包</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#4-在-usr-local-sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch-jar"><span class="section table-of-contents-text">4.在/usr/local/sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch.jar</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#5-保存后，为-sbt增加可执行权限"><span class="section table-of-contents-text">5.保存后，为./sbt增加可执行权限:</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#6-最后检验sbt是否可用"><span class="section table-of-contents-text">6.最后检验sbt是否可用</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#7-创建hello-world项目，并编译，打包，运行。"><span class="section table-of-contents-text">7.创建hello world项目，并编译，打包，运行。</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#还有一种方法-搭建repox"><span class="section table-of-contents-text">还有一种方法 搭建repox</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#运行"><span class="section table-of-contents-text">运行</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#配置"><span class="section table-of-contents-text">配置</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#登录密码"><span class="section table-of-contents-text">登录密码</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#sbt-配置"><span class="section table-of-contents-text">sbt 配置</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h1 id="安装sbt"><a href="#安装sbt" class="headerlink" title="安装sbt"></a>安装sbt</h1><p>Linux版本：Deepin15.1</p>
+<p>sbt:0.13.11</p>
+<hr>
+<p>下载sbt-launch.jar，然后将源改为国内源（aliyun），我选择将sbt安装在/usr/local/sbt中（随意）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$sudo mkdir /usr/local/sbt</div><div class="line">$sudo chown -R hadoop /usr/local/sbt   #我的用户名是 hadoop.</div><div class="line">$cd /usr/local/sbt</div><div class="line">$mkdir sbtlaunch   #用来放sbt-launch.jar</div></pre></td></tr></table></figure></p>
+<h2 id="1-下载sbt-launch-jar-并存放至-usr-local-sbt-sbtlaunch"><a href="#1-下载sbt-launch-jar-并存放至-usr-local-sbt-sbtlaunch" class="headerlink" title="1.下载sbt-launch.jar,并存放至/usr/local/sbt/sbtlaunch"></a>1.下载sbt-launch.jar,并存放至/usr/local/sbt/sbtlaunch</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /usr/local/sbt/sbtlaunch</div><div class="line">$unzip -q ./sbt-launch.jar #解压</div></pre></td></tr></table></figure>
+<h2 id="2-需要修改其中的-sbt-sbt-boot-properties文件-将-repositories-处修改为如下内容"><a href="#2-需要修改其中的-sbt-sbt-boot-properties文件-将-repositories-处修改为如下内容" class="headerlink" title="2.需要修改其中的./sbt/sbt.boot.properties文件,将[repositories]处修改为如下内容"></a>2.需要修改其中的./sbt/sbt.boot.properties文件,将[repositories]处修改为如下内容</h2><p>因为国内<del>众所周知的原因</del>，连接国外https会慢，所以这里都换成http<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /usr/local/sbt/sbtlaunch</div><div class="line">$vim ./sbt/sbt.boot.properties</div></pre></td></tr></table></figure></p>
+<p>修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[repositories]</div><div class="line">  local</div><div class="line">  aliyun-nexus: http://maven.aliyun.com/nexus/content/groups/public/</div><div class="line">  repox-maven: http://repox.gtan.com:8078/</div><div class="line">  repox-ivy: http://repox.gtan.com:8078/ , [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]</div><div class="line">  #jcenter: https://jcenter.bintray.com/</div><div class="line"> </div><div class="line">  maven-central</div></pre></td></tr></table></figure></p>
+<p>还有/usr/local/sbt/sbtlaunch中的<img src="http://i4.buimg.com/567571/8ce5c4828bc7853b.png" alt=""></p>
+<p>这些文件内容也最好改一下。改成如下图所示：<a href="http://dl.bintray.com/sbt/sbt-plugin-releases/" target="_blank" rel="external">http://dl.bintray.com/sbt/sbt-plugin-releases/</a></p>
+<p><img src="http://i2.muimg.com/567571/89bf3c5bc96dca79.png" alt=""></p>
+<p>还有在~/.sbt/repositrories文件中(没有就建一个)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$vim ~/.sbt/repositrories</div></pre></td></tr></table></figure></p>
+<p>也添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[repositories]</div><div class="line">  local</div><div class="line">  repox-maven: http://repox.gtan.com:8078/</div><div class="line">  repox-ivy: http://repox.gtan.com:8078/ , [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]</div></pre></td></tr></table></figure>
+<hr>
+<p>上面所有这些是为了换个下载仓库。</p>
+<h2 id="3-删除原来的sbt-launch-文件，然后重新打包"><a href="#3-删除原来的sbt-launch-文件，然后重新打包" class="headerlink" title="3.删除原来的sbt-launch.文件，然后重新打包"></a>3.删除原来的sbt-launch.文件，然后重新打包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$rm ./sbt-launch.jar           #删除旧的</div><div class="line">$jar -cfM ./sbt-launch.jar .   #重新打一个jar</div></pre></td></tr></table></figure>
+<h2 id="4-在-usr-local-sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch-jar"><a href="#4-在-usr-local-sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch-jar" class="headerlink" title="4.在/usr/local/sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch.jar"></a>4.在/usr/local/sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch.jar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /usr/lcoal/sbt</div><div class="line">$vim ./sbt         #新建sbt脚本</div></pre></td></tr></table></figure>
+<p>添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SBT_OPTS=&quot;-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M&quot;</div><div class="line">java $SBT_OPTS -jar /usr/local/sbt/sbtlaunch/sbt-launch.jar &quot;$@&quot;</div></pre></td></tr></table></figure></p>
+<h2 id="5-保存后，为-sbt增加可执行权限"><a href="#5-保存后，为-sbt增加可执行权限" class="headerlink" title="5.保存后，为./sbt增加可执行权限:"></a>5.保存后，为./sbt增加可执行权限:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$chmod u+x ./sbt</div></pre></td></tr></table></figure>
+<h2 id="6-最后检验sbt是否可用"><a href="#6-最后检验sbt是否可用" class="headerlink" title="6.最后检验sbt是否可用"></a>6.最后检验sbt是否可用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$./sbt sbt-version</div></pre></td></tr></table></figure>
+<p>改了镜像速度应该会上去一些，<del>在国内墙环境下主要还是看运气</del>，希望大家测试一下。</p>
+<p>然后按照书上新建项目，进行打包运行测试，或者照下面的Helloworld项目测试。</p>
+<h2 id="7-创建hello-world项目，并编译，打包，运行。"><a href="#7-创建hello-world项目，并编译，打包，运行。" class="headerlink" title="7.创建hello world项目，并编译，打包，运行。"></a>7.创建hello world项目，并编译，打包，运行。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$mkdir ~/simpleapp</div><div class="line">$mkdir ~/simpleapp/src</div><div class="line">$mkdir ~/simpleapp/src/main</div><div class="line">$mkdir ~/simpleapp/src/main/scala</div><div class="line">$vim ~/simpleapp/src/main/scala/SimpleApp.scala   #内容如下</div></pre></td></tr></table></figure>
+<p>SimpleApp.Scala<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">object SimpleApp&#123;</div><div class="line">        def main(args: Array[String])&#123;</div><div class="line">                println(&quot;Hello World!&quot;)</div><div class="line">        &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7.2 创建simple.sbt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd ~/simpleapp</div><div class="line">$vim ./simple.sbt      #内容如下</div></pre></td></tr></table></figure>
+<p>simple.sbt内容如下：每一行之间空一行。scala version 和 Spark版本信息根据所安装的spark所写。笔者安装的是spark2.1.0和scala 2.11.8。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">name :=&quot;Simple Project&quot;</div><div class="line"></div><div class="line">version :=&quot;1.0&quot;</div><div class="line"></div><div class="line">scalaVersion := &quot;2.11.8&quot;</div><div class="line"></div><div class="line">libraryDependencies +=&quot;org.apache.spark&quot; %% &quot;spark-core&quot; % &quot;2.1.0&quot;</div></pre></td></tr></table></figure></p>
+<p>7.3配置环境变量，编译和运行。</p>
+<p><strong>注意：</strong></p>
+<p>打包时带参数-Dsbt.override.build.repos=true</p>
+<p>这个参数是为了让sbt用你设置的仓库下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sbt -Dsbt.override.build.repos=true package</div></pre></td></tr></table></figure></p>
+<hr>
+<p>或者直接配置路径,这样就不用每次带参数了：</p>
+<p>在/usr/local/sbt下的sbt文件里，SBT_OPTS=””里面加上-Dsbt.override.build.repos=true ，这样就不用带参数了，直接sbt package打包就好</p>
+<p>建议选择直接配置路径。</p>
+<hr>
+<p>下面给出完整步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$vim ~/.bashrc 		#在开头添加如下内容：export PATH=/usr/local/sbt:$PATH</div><div class="line">$source ~/.bashrc         #使之生效</div><div class="line">$cd ~/simpleapp</div><div class="line">$sbt compile           #编译，可以省略这步 直接打包</div><div class="line">$sbt package           #打包 前提是你已经将-Dsbt.override.build.repos=true这个参数配了</div><div class="line"></div><div class="line">$/usr/local/spark/bin/spark-submit --class &quot;SimpleApp&quot; ~/simpleapp/target/scala-2.11/simple-project_2.11-1.0.jar   #将生成的jar包通过spark-summit提交到spark中执行</div></pre></td></tr></table></figure>
+<p>这样下载依赖包会非常快，一堆[SUCESS]过去，没改之前依赖包一直卡着下不动根本无法打包，改了之后就很快了很快就打包编译了。</p>
+<p>下面给出我的截图(这个截图没有截出下载依赖包的界面。。。)：</p>
+<p><img src="http://i2.muimg.com/567571/753abb7dffc22f44.png" alt=""></p>
+<p><strong><strong>是不是速度和之前比快了很多！</strong></strong></p>
+<hr>
+<h1 id="还有一种方法-搭建repox"><a href="#还有一种方法-搭建repox" class="headerlink" title="还有一种方法 搭建repox"></a>还有一种方法 搭建repox</h1><p>from github：</p>
+<p>从源码编译打包<br>repox暂时没有发布二进制包，只能从源码编译。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/Centaur/repox.git</div><div class="line">$ cd repox/src/main/resources/admin</div><div class="line">$ bower install</div><div class="line">$ cd ../../../..</div><div class="line">$ sbt assembly</div></pre></td></tr></table></figure>
+<p>上述中的bower依赖于Node.js和npm，因此需要先安装node.js。sbt将会在target/Scala-2.11/目录下生成 repox-assembly-$VERSION.jar</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java -Xmx512m -jar repox-assembly-$VERSION.jar</div></pre></td></tr></table></figure>
+<p>repox监听所有网络接口上的8078端口。repox缓存的文件保存在 ~/.repox/storage 目录下，配置数据保存在 ~/.repox/journal 目录下，日志文件是 ~/.repox/repox.log 因此如果要备份数据，只需要备份 ~/.repox 目录即可。<br>以下假设repox部署在192.168.0.120这台服务器上。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>repox使用akka-persistence来保存配置信息（这当然不是必须的，repox用这个场景demo了akka-persistence的用法）。 从浏览器连接 <a href="http://192.168.0.120:8078/admin/admin.html" target="_blank" rel="external">http://192.168.0.120:8078/admin/admin.html</a> 通过web界面对repox进行配置。从<a href="https://github.com/Centaur/repox/wiki/%E9%85%8D%E7%BD%AE%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93" target="_blank" rel="external">这里</a>开始</p>
+<h2 id="登录密码"><a href="#登录密码" class="headerlink" title="登录密码"></a>登录密码</h2><p>Repox web admin 默认密码为zhimakaimen.</p>
+<h2 id="sbt-配置"><a href="#sbt-配置" class="headerlink" title="sbt 配置"></a>sbt 配置</h2><p>为了充分发挥repox的优势，在开发者本机上需要做两件事。</p>
+<p>1.配置 ~/.sbt/repositories 文件（如果文件还未创建过，则创建它），除了本地缓存外，仅使用repox作为仓库。文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[repositories]</div><div class="line">local</div><div class="line">repox-maven: http://192.168.0.120:8078/</div><div class="line">repox-ivy: http://192.168.0.120:8078/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]</div></pre></td></tr></table></figure>
+<p>请注意，repox-maven 与 repox-ivy 的次序是重要的，请将 repox-maven 写在 repox-ivy 的前面。</p>
+<p>2.配置sbt，使它仅使用~/.sbt/repositories中的内容。</p>
+<p>如果你使用命令行，请在sbt命令行参数中添加 -Dsbt.override.build.repos=true 。例如我的sbt shell脚本的内容是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">export SBT_OPTS=&quot;-Dsbt.override.build.repos=true&quot;</div><div class="line">exec java -Xmx512M $&#123;SBT_OPTS&#125; -jar $(dirname &quot;$0&quot;)/sbt-launch.jar &quot;$@&quot;</div></pre></td></tr></table></figure>
+<p>Renkai注:个人试了下只做第一步不做第二步似乎也是蛮好用的</p>
+<hr>
+<p>Author：张琼</p>
+<p>打赏：<br><img src="https://raw.githubusercontent.com/nwsuafzq/nwsuafzq.github.io/master/wxds.JPG" alt=""></p>
+
+                
+<p class="pink-link-context">
+    <a href="/2017/04/21/Maven大提速/" rel="next" title="maven国内速度过慢解决">
+    上一篇：maven国内速度过慢解决
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2017/04/09/消息中间件/" rel="next" title="消息中间件应用开发">
+    下一篇：消息中间件应用开发
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/04/21/sbt相关/" data-title="sbt速度过慢解决" data-url="http://nwsuafzq.github.io/2017/04/21/sbt相关/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangqiong'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large pink">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="menu"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer indigo darken-1">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/zqzqzq233" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/nwsuafzq" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
+            </div>
+            
+
+            
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://blog.csdn.net/qq_25560423" target="_blank">我的csdn技术博客</a>
+                
+                    <a class="social-link" href="https://github.com/nwsuafzq" target="_blank">Github地址</a>
+                
+                    <a class="social-link" href="http://www.nwafulive.cn" target="_blank">我的个人主页</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright pink-link-context">
+        <div class="container">
+            © 2016 nwafulive.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('pink lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60086238" charset="UTF-8"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</body>
+</html>

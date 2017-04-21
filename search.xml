@@ -4,6 +4,95 @@
   
     
     <entry>
+      <title><![CDATA[maven国内速度过慢解决]]></title>
+      <url>http://nwsuafzq.github.io/2017/04/21/Maven%E5%A4%A7%E6%8F%90%E9%80%9F/</url>
+      <content type="html"><![CDATA[<h1 id="在-Maven-配置文件中添加如下配置："><a href="#在-Maven-配置文件中添加如下配置：" class="headerlink" title="在 Maven 配置文件中添加如下配置："></a>在 Maven 配置文件中添加如下配置：</h1><p>我把maven放到了/usr/local 下</p>
+<p>修改/usr/local/maven/conf/settings.xml配置文件</p>
+<p>在<mirrors></mirrors>中加入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;mirror&gt;</div><div class="line">&lt;id&gt;nexus-aliyun&lt;/id&gt;</div><div class="line">&lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</div><div class="line">&lt;name&gt;Nexus osc&lt;/name&gt;</div><div class="line">&lt;url&gt;</div><div class="line">http://maven.aliyun.com/nexus/content/groups/public/</div><div class="line">&lt;/url&gt;</div><div class="line">&lt;/mirror&gt;</div><div class="line">&lt;mirror&gt;</div><div class="line">&lt;id&gt;nexus-osc-thirdparty&lt;/id&gt;</div><div class="line">&lt;mirrorOf&gt;thirdparty&lt;/mirrorOf&gt;</div><div class="line">&lt;name&gt;Nexus aliyun thirdparty&lt;/name&gt;</div><div class="line">&lt;url&gt;</div><div class="line">http://maven.aliyun.com/nexus/content/repositories/thirdparty/</div><div class="line">&lt;/url&gt;</div><div class="line">&lt;/mirror&gt;</div></pre></td></tr></table></figure></p>
+<p>其中<mirrorof>*</mirrorof>这个标签值一定要为“所有” ，这样所有repository请求都会先去请求镜像，否则有些请求mirror没拦截到就去请求apache了，请求apache可就慢了。</p>
+<h2 id="然后建工程"><a href="#然后建工程" class="headerlink" title="然后建工程"></a>然后建工程</h2><p>然后按照书上的例子代码建一个工程，</p>
+<p>其中的pom.xml里面<url></url>标签要改为<a href="http://maven.aliyun.com/nexus/content/groups/public/" target="_blank" rel="external">http://maven.aliyun.com/nexus/content/groups/public/</a></p>
+<p>然后打包，提交到spark运行吧。</p>
+<p><strong>速度会非常快比起之前</strong></p>
+<p>下面是我打包的截图：</p>
+<p><img src="http://i2.muimg.com/567571/b33ac96e686407a8.png" alt=""></p>
+<p>速度很快。</p>
+<hr>
+<p>Author：张琼</p>
+<p>打赏：</p>
+<p><img src="https://raw.githubusercontent.com/nwsuafzq/nwsuafzq.github.io/master/wxds.JPG" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[sbt速度过慢解决]]></title>
+      <url>http://nwsuafzq.github.io/2017/04/21/sbt%E7%9B%B8%E5%85%B3/</url>
+      <content type="html"><![CDATA[<h1 id="安装sbt"><a href="#安装sbt" class="headerlink" title="安装sbt"></a>安装sbt</h1><p>Linux版本：Deepin15.1</p>
+<p>sbt:0.13.11</p>
+<hr>
+<p>下载sbt-launch.jar，然后将源改为国内源（aliyun），我选择将sbt安装在/usr/local/sbt中（随意）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$sudo mkdir /usr/local/sbt</div><div class="line">$sudo chown -R hadoop /usr/local/sbt   #我的用户名是 hadoop.</div><div class="line">$cd /usr/local/sbt</div><div class="line">$mkdir sbtlaunch   #用来放sbt-launch.jar</div></pre></td></tr></table></figure></p>
+<h2 id="1-下载sbt-launch-jar-并存放至-usr-local-sbt-sbtlaunch"><a href="#1-下载sbt-launch-jar-并存放至-usr-local-sbt-sbtlaunch" class="headerlink" title="1.下载sbt-launch.jar,并存放至/usr/local/sbt/sbtlaunch"></a>1.下载sbt-launch.jar,并存放至/usr/local/sbt/sbtlaunch</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /usr/local/sbt/sbtlaunch</div><div class="line">$unzip -q ./sbt-launch.jar #解压</div></pre></td></tr></table></figure>
+<h2 id="2-需要修改其中的-sbt-sbt-boot-properties文件-将-repositories-处修改为如下内容"><a href="#2-需要修改其中的-sbt-sbt-boot-properties文件-将-repositories-处修改为如下内容" class="headerlink" title="2.需要修改其中的./sbt/sbt.boot.properties文件,将[repositories]处修改为如下内容"></a>2.需要修改其中的./sbt/sbt.boot.properties文件,将[repositories]处修改为如下内容</h2><p>因为国内<del>众所周知的原因</del>，连接国外https会慢，所以这里都换成http<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /usr/local/sbt/sbtlaunch</div><div class="line">$vim ./sbt/sbt.boot.properties</div></pre></td></tr></table></figure></p>
+<p>修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[repositories]</div><div class="line">  local</div><div class="line">  aliyun-nexus: http://maven.aliyun.com/nexus/content/groups/public/</div><div class="line">  repox-maven: http://repox.gtan.com:8078/</div><div class="line">  repox-ivy: http://repox.gtan.com:8078/ , [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]</div><div class="line">  #jcenter: https://jcenter.bintray.com/</div><div class="line"> </div><div class="line">  maven-central</div></pre></td></tr></table></figure></p>
+<p>还有/usr/local/sbt/sbtlaunch中的<img src="http://i4.buimg.com/567571/8ce5c4828bc7853b.png" alt=""></p>
+<p>这些文件内容也最好改一下。改成如下图所示：<a href="http://dl.bintray.com/sbt/sbt-plugin-releases/" target="_blank" rel="external">http://dl.bintray.com/sbt/sbt-plugin-releases/</a></p>
+<p><img src="http://i2.muimg.com/567571/89bf3c5bc96dca79.png" alt=""></p>
+<p>还有在~/.sbt/repositrories文件中(没有就建一个)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$vim ~/.sbt/repositrories</div></pre></td></tr></table></figure></p>
+<p>也添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[repositories]</div><div class="line">  local</div><div class="line">  repox-maven: http://repox.gtan.com:8078/</div><div class="line">  repox-ivy: http://repox.gtan.com:8078/ , [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]</div></pre></td></tr></table></figure>
+<hr>
+<p>上面所有这些是为了换个下载仓库。</p>
+<h2 id="3-删除原来的sbt-launch-文件，然后重新打包"><a href="#3-删除原来的sbt-launch-文件，然后重新打包" class="headerlink" title="3.删除原来的sbt-launch.文件，然后重新打包"></a>3.删除原来的sbt-launch.文件，然后重新打包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$rm ./sbt-launch.jar           #删除旧的</div><div class="line">$jar -cfM ./sbt-launch.jar .   #重新打一个jar</div></pre></td></tr></table></figure>
+<h2 id="4-在-usr-local-sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch-jar"><a href="#4-在-usr-local-sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch-jar" class="headerlink" title="4.在/usr/local/sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch.jar"></a>4.在/usr/local/sbt目录下创建sbt脚本文件并赋予可执行权限，来执行sbt-launch.jar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /usr/lcoal/sbt</div><div class="line">$vim ./sbt         #新建sbt脚本</div></pre></td></tr></table></figure>
+<p>添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SBT_OPTS=&quot;-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M&quot;</div><div class="line">java $SBT_OPTS -jar /usr/local/sbt/sbtlaunch/sbt-launch.jar &quot;$@&quot;</div></pre></td></tr></table></figure></p>
+<h2 id="5-保存后，为-sbt增加可执行权限"><a href="#5-保存后，为-sbt增加可执行权限" class="headerlink" title="5.保存后，为./sbt增加可执行权限:"></a>5.保存后，为./sbt增加可执行权限:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$chmod u+x ./sbt</div></pre></td></tr></table></figure>
+<h2 id="6-最后检验sbt是否可用"><a href="#6-最后检验sbt是否可用" class="headerlink" title="6.最后检验sbt是否可用"></a>6.最后检验sbt是否可用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$./sbt sbt-version</div></pre></td></tr></table></figure>
+<p>改了镜像速度应该会上去一些，<del>在国内墙环境下主要还是看运气</del>，希望大家测试一下。</p>
+<p>然后按照书上新建项目，进行打包运行测试，或者照下面的Helloworld项目测试。</p>
+<h2 id="7-创建hello-world项目，并编译，打包，运行。"><a href="#7-创建hello-world项目，并编译，打包，运行。" class="headerlink" title="7.创建hello world项目，并编译，打包，运行。"></a>7.创建hello world项目，并编译，打包，运行。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$mkdir ~/simpleapp</div><div class="line">$mkdir ~/simpleapp/src</div><div class="line">$mkdir ~/simpleapp/src/main</div><div class="line">$mkdir ~/simpleapp/src/main/scala</div><div class="line">$vim ~/simpleapp/src/main/scala/SimpleApp.scala   #内容如下</div></pre></td></tr></table></figure>
+<p>SimpleApp.Scala<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">object SimpleApp&#123;</div><div class="line">        def main(args: Array[String])&#123;</div><div class="line">                println(&quot;Hello World!&quot;)</div><div class="line">        &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7.2 创建simple.sbt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd ~/simpleapp</div><div class="line">$vim ./simple.sbt      #内容如下</div></pre></td></tr></table></figure>
+<p>simple.sbt内容如下：每一行之间空一行。scala version 和 Spark版本信息根据所安装的spark所写。笔者安装的是spark2.1.0和scala 2.11.8。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">name :=&quot;Simple Project&quot;</div><div class="line"></div><div class="line">version :=&quot;1.0&quot;</div><div class="line"></div><div class="line">scalaVersion := &quot;2.11.8&quot;</div><div class="line"></div><div class="line">libraryDependencies +=&quot;org.apache.spark&quot; %% &quot;spark-core&quot; % &quot;2.1.0&quot;</div></pre></td></tr></table></figure></p>
+<p>7.3配置环境变量，编译和运行。</p>
+<p><strong>注意：</strong></p>
+<p>打包时带参数-Dsbt.override.build.repos=true</p>
+<p>这个参数是为了让sbt用你设置的仓库下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sbt -Dsbt.override.build.repos=true package</div></pre></td></tr></table></figure></p>
+<hr>
+<p>或者直接配置路径,这样就不用每次带参数了：</p>
+<p>在/usr/local/sbt下的sbt文件里，SBT_OPTS=””里面加上-Dsbt.override.build.repos=true ，这样就不用带参数了，直接sbt package打包就好</p>
+<p>建议选择直接配置路径。</p>
+<hr>
+<p>下面给出完整步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$vim ~/.bashrc 		#在开头添加如下内容：export PATH=/usr/local/sbt:$PATH</div><div class="line">$source ~/.bashrc         #使之生效</div><div class="line">$cd ~/simpleapp</div><div class="line">$sbt compile           #编译，可以省略这步 直接打包</div><div class="line">$sbt package           #打包 前提是你已经将-Dsbt.override.build.repos=true这个参数配了</div><div class="line"></div><div class="line">$/usr/local/spark/bin/spark-submit --class &quot;SimpleApp&quot; ~/simpleapp/target/scala-2.11/simple-project_2.11-1.0.jar   #将生成的jar包通过spark-summit提交到spark中执行</div></pre></td></tr></table></figure>
+<p>这样下载依赖包会非常快，一堆[SUCESS]过去，没改之前依赖包一直卡着下不动根本无法打包，改了之后就很快了很快就打包编译了。</p>
+<p>下面给出我的截图(这个截图没有截出下载依赖包的界面。。。)：</p>
+<p><img src="http://i2.muimg.com/567571/753abb7dffc22f44.png" alt=""></p>
+<p><strong><strong>是不是速度和之前比快了很多！</strong></strong></p>
+<hr>
+<h1 id="还有一种方法-搭建repox"><a href="#还有一种方法-搭建repox" class="headerlink" title="还有一种方法 搭建repox"></a>还有一种方法 搭建repox</h1><p>from github：</p>
+<p>从源码编译打包<br>repox暂时没有发布二进制包，只能从源码编译。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/Centaur/repox.git</div><div class="line">$ cd repox/src/main/resources/admin</div><div class="line">$ bower install</div><div class="line">$ cd ../../../..</div><div class="line">$ sbt assembly</div></pre></td></tr></table></figure>
+<p>上述中的bower依赖于Node.js和npm，因此需要先安装node.js。sbt将会在target/Scala-2.11/目录下生成 repox-assembly-$VERSION.jar</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java -Xmx512m -jar repox-assembly-$VERSION.jar</div></pre></td></tr></table></figure>
+<p>repox监听所有网络接口上的8078端口。repox缓存的文件保存在 ~/.repox/storage 目录下，配置数据保存在 ~/.repox/journal 目录下，日志文件是 ~/.repox/repox.log 因此如果要备份数据，只需要备份 ~/.repox 目录即可。<br>以下假设repox部署在192.168.0.120这台服务器上。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>repox使用akka-persistence来保存配置信息（这当然不是必须的，repox用这个场景demo了akka-persistence的用法）。 从浏览器连接 <a href="http://192.168.0.120:8078/admin/admin.html" target="_blank" rel="external">http://192.168.0.120:8078/admin/admin.html</a> 通过web界面对repox进行配置。从<a href="https://github.com/Centaur/repox/wiki/%E9%85%8D%E7%BD%AE%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93" target="_blank" rel="external">这里</a>开始</p>
+<h2 id="登录密码"><a href="#登录密码" class="headerlink" title="登录密码"></a>登录密码</h2><p>Repox web admin 默认密码为zhimakaimen.</p>
+<h2 id="sbt-配置"><a href="#sbt-配置" class="headerlink" title="sbt 配置"></a>sbt 配置</h2><p>为了充分发挥repox的优势，在开发者本机上需要做两件事。</p>
+<p>1.配置 ~/.sbt/repositories 文件（如果文件还未创建过，则创建它），除了本地缓存外，仅使用repox作为仓库。文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[repositories]</div><div class="line">local</div><div class="line">repox-maven: http://192.168.0.120:8078/</div><div class="line">repox-ivy: http://192.168.0.120:8078/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]</div></pre></td></tr></table></figure>
+<p>请注意，repox-maven 与 repox-ivy 的次序是重要的，请将 repox-maven 写在 repox-ivy 的前面。</p>
+<p>2.配置sbt，使它仅使用~/.sbt/repositories中的内容。</p>
+<p>如果你使用命令行，请在sbt命令行参数中添加 -Dsbt.override.build.repos=true 。例如我的sbt shell脚本的内容是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">export SBT_OPTS=&quot;-Dsbt.override.build.repos=true&quot;</div><div class="line">exec java -Xmx512M $&#123;SBT_OPTS&#125; -jar $(dirname &quot;$0&quot;)/sbt-launch.jar &quot;$@&quot;</div></pre></td></tr></table></figure>
+<p>Renkai注:个人试了下只做第一步不做第二步似乎也是蛮好用的</p>
+<hr>
+<p>Author：张琼</p>
+<p>打赏：<br><img src="https://raw.githubusercontent.com/nwsuafzq/nwsuafzq.github.io/master/wxds.JPG" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[消息中间件应用开发]]></title>
       <url>http://nwsuafzq.github.io/2017/04/09/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/</url>
       <content type="html"><![CDATA[<p>消息中间件 双方使用不同队列进行发送接收消息<br> (1）实现界面化的聊天工具，支持二人之间互发消息。<br>（2）界面上必须标注软件版权信息，包括姓名、学号等个性化信息。<br>（3）发送消息过程中，发送这首先把消息发送到消息服务器ActiveMQ，接收者从消息服务器上取消息；消息发送者和接收者不需要同时运行（在线），实现即使对方处在离线状态下也可以进行消息的发送和接收。</p>
@@ -274,6 +363,14 @@
     </entry>
     
     <entry>
+      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
+      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
+<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[tomcat服务器更改默认访问目录]]></title>
       <url>http://nwsuafzq.github.io/2016/12/21/tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>比如说我原来是访问<a href="http://xxx.xxx.com/test" target="_blank" rel="external">http://xxx.xxx.com/test</a> 想改成直接访问域名<a href="http://xxx.xxx.com/" target="_blank" rel="external">http://xxx.xxx.com/</a> 我查了相关了资料得出如下：<br>在X:\apache-tomcat-8.5.5\conf下有server.xml文件，里面</p>
@@ -291,14 +388,6 @@
       <title><![CDATA[Linux下安装Git]]></title>
       <url>http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/</url>
       <content type="html"><![CDATA[<p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
-      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
-<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
 ]]></content>
     </entry>
     

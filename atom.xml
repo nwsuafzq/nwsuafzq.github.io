@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2017-04-09T08:27:18.668Z</updated>
+  <updated>2017-04-21T09:35:35.510Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>maven国内速度过慢解决</title>
+    <link href="http://nwsuafzq.github.io/2017/04/21/Maven%E5%A4%A7%E6%8F%90%E9%80%9F/"/>
+    <id>http://nwsuafzq.github.io/2017/04/21/Maven大提速/</id>
+    <published>2017-04-21T09:33:34.545Z</published>
+    <updated>2017-04-21T09:35:35.510Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;在-Maven-配置文件中添加如下配置：&quot;&gt;&lt;a href=&quot;#在-Maven-配置文件中添加如下配置：&quot; class=&quot;headerlink&quot; title=&quot;在 Maven 配置文件中添加如下配置：&quot;&gt;&lt;/a&gt;在 Maven 配置文件中添加如下配置：&lt;/h1&gt;&lt;
+    
+    </summary>
+    
+      <category term="maven" scheme="http://nwsuafzq.github.io/categories/maven/"/>
+    
+    
+      <category term="maven" scheme="http://nwsuafzq.github.io/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sbt速度过慢解决</title>
+    <link href="http://nwsuafzq.github.io/2017/04/21/sbt%E7%9B%B8%E5%85%B3/"/>
+    <id>http://nwsuafzq.github.io/2017/04/21/sbt相关/</id>
+    <published>2017-04-21T09:33:30.700Z</published>
+    <updated>2017-04-21T09:34:42.863Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;安装sbt&quot;&gt;&lt;a href=&quot;#安装sbt&quot; class=&quot;headerlink&quot; title=&quot;安装sbt&quot;&gt;&lt;/a&gt;安装sbt&lt;/h1&gt;&lt;p&gt;Linux版本：Deepin15.1&lt;/p&gt;
+&lt;p&gt;sbt:0.13.11&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;下载sbt-la
+    
+    </summary>
+    
+      <category term="sbt" scheme="http://nwsuafzq.github.io/categories/sbt/"/>
+    
+    
+      <category term="spark" scheme="http://nwsuafzq.github.io/tags/spark/"/>
+    
+      <category term="sbt" scheme="http://nwsuafzq.github.io/tags/sbt/"/>
+    
+  </entry>
   
   <entry>
     <title>消息中间件应用开发</title>
@@ -437,51 +482,6 @@
     
     
       <category term="Java" scheme="http://nwsuafzq.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSP与Servlet区别</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/JSP和Servlet的区别/</id>
-    <published>2016-12-26T00:00:00.000Z</published>
-    <updated>2016-12-26T13:58:05.747Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#编程方式不同：&lt;br&gt;JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。&lt;/p&gt;
-&lt;p&gt;#编程方式不同：&lt;br&gt;servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自
-    
-    </summary>
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
-    
-    
-      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
-    
-      <category term="Servlet" scheme="http://nwsuafzq.github.io/tags/Servlet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSP作用对象小结</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/jsp对象作用范围小结/</id>
-    <published>2016-12-26T00:00:00.000Z</published>
-    <updated>2016-12-26T09:57:45.768Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有page；request；session；application&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;page范围：&lt;br&gt;在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。&lt;br&gt;request范围：&lt;br&gt;可以在请求对象产生后、响应完成前，被请求的
-    
-    </summary>
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
-    
-    
-      <category term="JSP" scheme="http://nwsuafzq.github.io/tags/JSP/"/>
     
   </entry>
   
