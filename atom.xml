@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2017-04-25T12:28:52.170Z</updated>
+  <updated>2017-05-08T13:34:05.270Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web Service开发</title>
+    <link href="http://nwsuafzq.github.io/2017/05/08/WebService%E5%BC%80%E5%8F%91/"/>
+    <id>http://nwsuafzq.github.io/2017/05/08/WebService开发/</id>
+    <published>2017-05-08T13:32:51.420Z</published>
+    <updated>2017-05-08T13:34:05.270Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20170508213036665?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize
+    
+    </summary>
+    
+      <category term="中间件技术" scheme="http://nwsuafzq.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Web Service" scheme="http://nwsuafzq.github.io/tags/Web-Service/"/>
+    
+  </entry>
   
   <entry>
     <title>流计算Storm的安装与测试</title>
@@ -465,27 +485,6 @@
       <category term="Spring" scheme="http://nwsuafzq.github.io/tags/Spring/"/>
     
       <category term="Bean" scheme="http://nwsuafzq.github.io/tags/Bean/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java 高级for循环</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/java%20%E9%AB%98%E7%BA%A7for%E5%BE%AA%E7%8E%AF/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/java 高级for循环/</id>
-    <published>2016-12-26T14:03:03.644Z</published>
-    <updated>2016-12-26T14:04:02.371Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;//从java 5.0开始，Java语言就有加强版的for循环&lt;br&gt;高级for循环是集合中（Collection）迭代器的简写形式。即集合中的迭代器可以使用高级for来代替。&lt;/p&gt;
-&lt;h2 id=&quot;格式：&quot;&gt;&lt;a href=&quot;#格式：&quot; class=&quot;headerlin
-    
-    </summary>
-    
-      <category term="Java" scheme="http://nwsuafzq.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://nwsuafzq.github.io/tags/Java/"/>
     
   </entry>
   

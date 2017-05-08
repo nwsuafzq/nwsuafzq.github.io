@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[Web Service开发]]></title>
+      <url>http://nwsuafzq.github.io/2017/05/08/WebService%E5%BC%80%E5%8F%91/</url>
+      <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20170508213036665?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="webservice"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[流计算Storm的安装与测试]]></title>
       <url>http://nwsuafzq.github.io/2017/04/25/%E6%B5%81%E8%AE%A1%E7%AE%97Storm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95%20Ubuntu%20or%20Deepin/</url>
       <content type="html"><![CDATA[<p><strong>本教程的具体运行环境如下：</strong></p>
@@ -385,14 +392,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP与Servlet区别]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
-<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[JSP作用对象小结]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
       <content type="html"><![CDATA[<p>有page；request；session；application</p>
@@ -421,6 +420,22 @@
     </entry>
     
     <entry>
+      <title><![CDATA[JSP与Servlet区别]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
+<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
+      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
+<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[tomcat服务器更改默认访问目录]]></title>
       <url>http://nwsuafzq.github.io/2016/12/21/tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>比如说我原来是访问<a href="http://xxx.xxx.com/test" target="_blank" rel="external">http://xxx.xxx.com/test</a> 想改成直接访问域名<a href="http://xxx.xxx.com/" target="_blank" rel="external">http://xxx.xxx.com/</a> 我查了相关了资料得出如下：<br>在X:\apache-tomcat-8.5.5\conf下有server.xml文件，里面</p>
@@ -438,14 +453,6 @@
       <title><![CDATA[Linux下安装Git]]></title>
       <url>http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/</url>
       <content type="html"><![CDATA[<p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
-      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
-<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
 ]]></content>
     </entry>
     
