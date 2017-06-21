@@ -7,7 +7,7 @@
 
     
 
-    <title>流计算Storm的安装与测试 | 所长的blog</title>
+    <title>多线程 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="流计算Storm的安装与测试"/>
+    
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -329,161 +329,30 @@
 
     <main>
         <div class="container main-container">
-    <nav class="page-nav hide-on-small-only">
+    
+
+<nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（分类目录）</span>
-        
-            
-    
-    
-    <a class="breadcrumb" href="/categories/Storm/">Storm</a>
-
-
+        <span class="breadcrumb">当前位置（标签）</span>
         
 
+        
+            <a class="breadcrumb" href="/tags/多线程/">多线程</a>
         
     </div>
 </nav>
 
-<article>
-    <div class="card">
-        <div class="card-content">
-            
-
-            <div class="article-title">
-                
-    
-        <h1>流计算Storm的安装与测试</h1>
-    
 
 
-            </div>
-            <time class="pink-link-context" datetime="2017-04-25T12:23:48.941Z"><a href="/2017/04/25/流计算Storm的安装与测试 Ubuntu or Deepin/">2017-04-25</a></time>
-
-            <span id="busuanzi_container_page_pv" class="read-times-container">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_page_pv"></span>
-</span>
-
-            
-    <div class="tags-row">
+    <div class="collection mt-0">
         
-            <a href="/tags/Storm/" class="chip pink lighten-1">Storm</a>
+            <a href="/2017/06/21/实现Java多线程/" class="collection-item grey-text text-darken-1">
+                <time datetime="2017-06-21T14:21:03.538Z">2017-06-21</time>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                实现Java多线程
+            </a>
         
     </div>
-
-
-            <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#一、安装Storm"><span class="section table-of-contents-text">一、安装Storm</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#安装-Zookeeper"><span class="section table-of-contents-text">安装 Zookeeper</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#安装Storm（单机）"><span class="section table-of-contents-text">安装Storm（单机）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#关闭Storm"><span class="section table-of-contents-text">关闭Storm</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#运行Storm实例-WordCount"><span class="section table-of-contents-text">运行Storm实例-WordCount</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#使用Maven编译运行Storm入门代码-Storm-starter"><span class="section table-of-contents-text">使用Maven编译运行Storm入门代码(Storm starter)</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#编译、运行代码"><span class="section table-of-contents-text">编译、运行代码</span></a></li></ol></li></ol></li></ol>
-</div>
-
-
-            <div class="entry pink-link-context">
-                <p><strong>本教程的具体运行环境如下：</strong></p>
-<p>Deepin 15.1 (Ubuntu)</p>
-<p>Storm 0.9.6</p>
-<p>Java JDK 1.7 (jdk大家都安装了)</p>
-<p>ZooKeeper 3.4.10</p>
-<p>Python 2.7 (Linux自带python)</p>
-<p>因为jdk和python都有了，所以主要介绍ZooKeeper和Storm安装</p>
-<h1 id="一、安装Storm"><a href="#一、安装Storm" class="headerlink" title="一、安装Storm"></a>一、安装Storm</h1><h2 id="安装-Zookeeper"><a href="#安装-Zookeeper" class="headerlink" title="安装 Zookeeper"></a>安装 Zookeeper</h2><p>本教程选择安装 zookeeper 最新稳定版（3.4.10），下载地址：<a href="http://mirrors.cnnic.cn/apache/zookeeper/stable/" target="_blank" rel="external">http://mirrors.cnnic.cn/apache/zookeeper/stable/</a> 或 <a href="http://mirror.bit.edu.cn/apache/zookeeper/stable/" target="_blank" rel="external">http://mirror.bit.edu.cn/apache/zookeeper/stable/</a> </p>
-<p>下载后执行如下命令进行安装 zookeeper（将命令中 3.4.10 改为你下载的版本）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$sudo tar -zxf ~/下载/zookeeper-3.4.10.tar.gz -C /usr/local</div><div class="line">$cd /usr/local</div><div class="line">$sudo mv zookeeper-* zookeeper  #改文件夹名</div><div class="line">$sudo chown -R hadoop ./zookeeper    #此处的hadoop为你的用户名</div></pre></td></tr></table></figure></p>
-<p>接着执行如下命令进行zookeeper配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$cd /usr/local/zookeeper</div><div class="line">$mkdir tmp</div><div class="line">$cp ./conf/zoo_sample.cfg ./conf/zoo.cfg</div><div class="line">$vim ./conf/zoo.cfg</div></pre></td></tr></table></figure></p>
-<p>将当中的 dataDir=/tmp/zookeeper 更改为 dataDir=/usr/local/zookeeper/tmp<br><img src="http://i1.piimg.com/567571/71a4bd358557ac9d.png" alt=""></p>
-<p>接着执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$./bin/zkServer.sh start</div></pre></td></tr></table></figure></p>
-<p>若显示如下图则表示启动成功:<br><img src="http://i4.buimg.com/567571/b9e3e7d471d320b3.png" alt=""></p>
-<h2 id="安装Storm（单机）"><a href="#安装Storm（单机）" class="headerlink" title="安装Storm（单机）"></a>安装Storm（单机）</h2><p>本教程所使用的版本为 Storm 0.9.6 ，下载地址<br><a href="http://www.apache.org/dyn/closer.lua/storm/apache-storm-0.9.6/apache-storm-0.9.6.tar.gz" target="_blank" rel="external">http://www.apache.org/dyn/closer.lua/storm/apache-storm-0.9.6/apache-storm-0.9.6.tar.gz</a></p>
-<p>下载后执行如下命令进行安装Storm：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$sudo tar -zxf ~/下载/apache-storm-0.9.6.tar.gz -C /usr/local</div><div class="line">$cd /usr/local</div><div class="line">$sudo mv apache-storm-0.9.6 storm</div><div class="line">$sudo chown -R hadoop ./storm    # 此处的hadoop为你的用户名</div></pre></td></tr></table></figure></p>
-<p>接着执行如下命令进行Storm配置:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /usr/local/storm</div><div class="line">$vim ./conf/storm.yaml</div></pre></td></tr></table></figure>
-<p>修改其中的 storm.zookeeper.servers 和 nimbus.host 两个配置项，即取消掉注释且都修改值为 127.0.0.1（我们只需要在单机上运行），如下图所示。<br><img src="http://i2.muimg.com/567571/0c2f960f28670548.png" alt=""></p>
-<p>简单配置后就可以启动 Storm 了。执行如下命令启动 nimbus 后台进程：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./bin/storm nimbus</div></pre></td></tr></table></figure>
-<p>若启动成功则显示如下图内容：</p>
-<p><img src="http://i1.piimg.com/567571/3daadcb6b91f34dd.png" alt=""></p>
-<p>启动 nimbus 后，终端被该进程占用了，不能再继续执行其他命令了。因此我们需要另外开启一个终端，然后执行如下命令启动 supervisor 后台进程：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 需要另外开启一个终端</div><div class="line">/usr/local/storm/bin/storm supervisor</div></pre></td></tr></table></figure>
-<p><img src="http://i2.muimg.com/567571/1f0e9887a95ca2a0.png" alt=""></p>
-<p>同样的，启动 supervisor 后，我们还需要开启另外的终端才能执行其他命令。另外，我们可以使用 jps 命令 检查是否成功启动，若成功启动会显示 nimbus、supervisor、QuorumPeeMain （QuorumPeeMain 是 zookeeper 的后台进程，若显示 config_value 表明 nimbus 或 supervisor 还在启动中），如下图所示。</p>
-<p><img src="http://i2.muimg.com/567571/17c3378f74be446f.png" alt=""></p>
-<h2 id="关闭Storm"><a href="#关闭Storm" class="headerlink" title="关闭Storm"></a>关闭Storm</h2><p>之前启动的 nimbus 和 supervisor 占用了两个终端窗口，切换到这两个终端窗口，按键盘的 Ctrl+C 可以终止进程，终止后，也就相当于关闭了 Storm。</p>
-<h2 id="运行Storm实例-WordCount"><a href="#运行Storm实例-WordCount" class="headerlink" title="运行Storm实例-WordCount"></a>运行Storm实例-WordCount</h2><p>Storm中自带了一些例子，我们可以执行一下 WordCount 例子来感受一下 Storm 的执行流程。执行如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/storm/bin/storm jar /usr/local/storm/examples/storm-starter/storm-starter-topologies-0.9.6.jar storm.starter.WordCountTopology</div></pre></td></tr></table></figure>
-<p>该程序是不断地取如下四句英文句子中的一句作为数据源，然后发送给 bolt 来统计单词出现的次数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;the cow jumped over the moon&quot;,</div><div class="line">    &quot;an apple a day keeps the doctor away&quot;,</div><div class="line">    &quot;four score and seven years ago&quot;,</div><div class="line">    &quot;snow white and the seven dwarfs&quot;, &quot;i am at two with na</div><div class="line">ture&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>可以看到程序执行过程中会输出非常多的信息（info 级别的日志输出，所以信息比较多），我们可以运行如下命令，使用 grep 命令对输出信息进行过滤，只输出我们所关心的内容–单词的实时统计信息（在这里我们只显示用于统计单词次数的 bolt 的输出信息）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/storm/bin/storm jar /usr/local/storm/examples/storm-starter/storm-starter-topologies-0.9.6.jar storm.starter.WordCountTopology | grep &apos;Thread-[0-9]*-count&apos;</div></pre></td></tr></table></figure>
-<p>输出的结果如下图，一次处理会输出两条信息，一是显示接收到的数据（单词[“agp”]），二是输出该单词当前总的出现次数（[ago, 55]，表示当前”ago”已出现了55次）。</p>
-<p><img src="http://i2.muimg.com/567571/42a5684ea488bfdb.png" alt=""></p>
-<h2 id="使用Maven编译运行Storm入门代码-Storm-starter"><a href="#使用Maven编译运行Storm入门代码-Storm-starter" class="headerlink" title="使用Maven编译运行Storm入门代码(Storm starter)"></a>使用Maven编译运行Storm入门代码(Storm starter)</h2><h3 id="编译、运行代码"><a href="#编译、运行代码" class="headerlink" title="编译、运行代码"></a>编译、运行代码</h3><p>最好将 maven 命令加入 PATH 变量中。执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bashrc</div></pre></td></tr></table></figure></p>
-<p>在最后面加上一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=/usr/local/maven/bin:$PATH</div></pre></td></tr></table></figure></p>
-<p>保存文件执行　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bashrc</div></pre></td></tr></table></figure></p>
-<p>接着执行 mvn -v 检验。</p>
-<hr>
-<p>先改一下maven配置文件/usr/local/maven/conf/settinmgs.xml,<br>要不有些依赖可能阿里云镜像没有，会出现依赖找不到。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/storm/examples/storm-starter</div><div class="line">mvn compile exec:java -Dstorm.topology=storm.starter.WordCountTopology</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 在 &lt;mirrors&gt; .. &lt;/mirrors&gt; 中添加如下配置： --&gt;</div><div class="line">&lt;mirror&gt;</div><div class="line">    &lt;id&gt;clojars&lt;/id&gt;</div><div class="line">    &lt;mirrorOf&gt;clojars&lt;/mirrorOf&gt;</div><div class="line">    &lt;url&gt;http://clojars.org/repo/&lt;/url&gt;</div><div class="line">&lt;/mirror&gt;</div><div class="line"> </div><div class="line">&lt;!-- 在 &lt;repositories&gt; .. &lt;/repositories&gt; 中添加如下配置： --&gt;</div><div class="line">&lt;repository&gt;</div><div class="line">        &lt;id&gt;clojars&lt;/id&gt;</div><div class="line">        &lt;url&gt;http://clojars.org/repo/&lt;/url&gt;</div><div class="line">&lt;/repository&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/storm/examples/storm-starter</div><div class="line">mvn compile exec:java -Dstorm.topology=storm.starter.WordCountTopology</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 在 &lt;mirrors&gt; .. &lt;/mirrors&gt; 中添加如下配置： --&gt;</div><div class="line">&lt;mirror&gt;</div><div class="line">    &lt;id&gt;clojars&lt;/id&gt;</div><div class="line">    &lt;mirrorOf&gt;clojars&lt;/mirrorOf&gt;</div><div class="line">    &lt;url&gt;http://clojars.org/repo/&lt;/url&gt;</div><div class="line">&lt;/mirror&gt;</div><div class="line"> </div><div class="line">&lt;!-- 在 &lt;repositories&gt; .. &lt;/repositories&gt; 中添加如下配置： --&gt;</div><div class="line">&lt;repository&gt;</div><div class="line">        &lt;id&gt;clojars&lt;/id&gt;</div><div class="line">        &lt;url&gt;http://clojars.org/repo/&lt;/url&gt;</div><div class="line">&lt;/repository&gt;</div></pre></td></tr></table></figure>
-<p>在此之前请先开启 Storm （即开启 zookeeper，nimbus 和 supervisor），并确定系统处于联网状态，因为在编译过程中需要下载不少依赖包。</p>
-<p>接着我们开始使用 maven 编译、运行 Storm starter。我们只需要进入 storm starter 所在目录，再执行相应的 mvn 命令，并指定参数即可，以运行 Storm starter 中的 WordCount 为例（WordCount 源码位于：/usr/local/storm/examples/storm-starter 下的 src/jvm/storm/starter/WordCountTopology.java）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn compile exec:java -Dstorm.topology=storm.starter.WordCountTopology | grep &apos;Thread-[0-9]*-count&apos;</div></pre></td></tr></table></figure>
-<p>可以看到输出结果与 Storm安装教程 中运行实例时是一致的，说明编译正确。</p>
-<hr>
-<p>Author: 张琼</p>
-
-                
-<p class="pink-link-context">
-    <a href="/2017/05/08/WebService开发/" rel="next" title="Web Service开发">
-    上一篇：Web Service开发
-  </a>
-</p>
-
-
-
-<p class="pink-link-context">
-    <a href="/2017/04/21/Maven大提速/" rel="next" title="maven国内速度过慢解决">
-    下一篇：maven国内速度过慢解决
-  </a>
-</p>
-
-
-            </div>
-			
-        </div>
-    </div>
-</article>
-
-
-
-
-    <section id="comment">
-        <div class="card">
-            <div class="card-content">
-                <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2017/04/25/流计算Storm的安装与测试 Ubuntu or Deepin/" data-title="流计算Storm的安装与测试" data-url="http://nwsuafzq.github.io/2017/04/25/流计算Storm的安装与测试 Ubuntu or Deepin/"></div>
-
-                <script type="text/javascript">
-                    console.log(document.querySelector('.ds-thread'));
-                    var duoshuoQuery = {
-                        short_name: 'zhangqiong'
-                    };
-                    (function() {
-                        var ds = document.createElement('script');
-                        ds.type = 'text/javascript';
-                        ds.async = true;
-                        ds.src = (document.location.protocol == 'https:'
-                            ? 'https:'
-                            : 'http:') + '//static.duoshuo.com/embed.js';
-                        ds.charset = 'UTF-8';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-                    })();
-                </script>
-                <!-- Duoshuo Comment END -->
-            </div>
-        </div>
-    </section>
-
 
 
 </div>

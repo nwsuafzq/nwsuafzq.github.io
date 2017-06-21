@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2017-06-21T14:03:31.280Z</updated>
+  <updated>2017-06-21T14:21:39.933Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现Java多线程</title>
+    <link href="http://nwsuafzq.github.io/2017/06/21/%E5%AE%9E%E7%8E%B0Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://nwsuafzq.github.io/2017/06/21/实现Java多线程/</id>
+    <published>2017-06-21T14:21:03.538Z</published>
+    <updated>2017-06-21T14:21:39.933Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两种最为常用&lt;/p&gt;
+&lt;h3 id=&quot;1-继承Thread类，重写run-方法&quot;&gt;&lt;a href=&quot;#1-继承Thread类，重写run-方法&quot; class=&quot;headerlink&quot; title=&quot;1.继承Thread类，重写run()方法&quot;&gt;&lt;/a&gt;1.继承Thread
+    
+    </summary>
+    
+      <category term="Java" scheme="http://nwsuafzq.github.io/categories/Java/"/>
+    
+    
+      <category term="java" scheme="http://nwsuafzq.github.io/tags/java/"/>
+    
+      <category term="多线程" scheme="http://nwsuafzq.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>值传递和引用传递</title>
@@ -455,32 +478,6 @@
     
     
       <category term="Java EE" scheme="http://nwsuafzq.github.io/tags/Java-EE/"/>
-    
-      <category term="EJB" scheme="http://nwsuafzq.github.io/tags/EJB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一个EJB应用</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAEJB%E5%BA%94%E7%94%A8/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/我的第一个EJB应用/</id>
-    <published>2016-12-26T14:05:46.360Z</published>
-    <updated>2016-12-26T14:09:50.840Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本来想随便试试，结果遇到好多问题。&lt;br&gt;一开始用的服务器是jboss7.0，结果没找到需要导入的jbossall-client.jar包，后来从老师那里下了一个6.0&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;服务器端开发：&quot;&gt;&lt;a href=&quot;#服务器端开发：&quot; class=&quot;
-    
-    </summary>
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
-    
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/tags/Java-EE/"/>
-    
-      <category term="Bean" scheme="http://nwsuafzq.github.io/tags/Bean/"/>
     
       <category term="EJB" scheme="http://nwsuafzq.github.io/tags/EJB/"/>
     
