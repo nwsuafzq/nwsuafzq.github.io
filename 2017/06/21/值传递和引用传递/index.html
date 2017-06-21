@@ -7,7 +7,7 @@
 
     
 
-    <title>spark | 所长的blog</title>
+    <title>值传递和引用传递 | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="值传递和引用传递"/>
     <meta property="og:site_name" content="你们还要再学习一个"/>
 
     
@@ -329,30 +329,113 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/Java/">Java</a>
+
 
         
-            <a class="breadcrumb" href="/tags/spark/">spark</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>值传递和引用传递</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-06-21T14:01:16.205Z"><a href="/2017/06/21/值传递和引用传递/">2017-06-21</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2017/04/21/sbt相关/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-04-21T09:33:30.700Z">2017-04-21</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                sbt速度过慢解决
-            </a>
+            <a href="/tags/java/" class="chip pink lighten-1">java</a>
+        
+            <a href="/tags/参数传递/" class="chip pink lighten-1">参数传递</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#值传递"><span class="section table-of-contents-text">值传递</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#引用传递"><span class="section table-of-contents-text">引用传递</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>java中提供了两种参数传递的方法：值传递和引用传递。</p>
+<h2 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h2><p>方法调用中，实参会把它的值传给形参，形参只是用实参的值初始化一个临时的存储单元，因此形参与实参虽然有着相同的值，但却有着不同的存储单元，因此对形参的改变不会影响实参的值。</p>
+<h2 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h2><p>传递的是对象，这时形参与实参的对象指向同一块存储单元，因此对形参的修改就会影响实参的值。</p>
+<p>基本类型和基本类型变量被当作参数传递给方法时，是值传递。在方法实体中，无法给原变量重新赋值，也无法改变它的值。<br>对象和引用型变量被当作参数传递给方法时，是引用传递。在方法实体中，无法给原变量重新赋值，但是可以改变它所指向对象的属性。 </p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">	public static void testPassParameter(StringBuffer ss1,int n)&#123;</div><div class="line">		ss1.append(&quot; World&quot;);//引用</div><div class="line">		n=8;//值</div><div class="line">		</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int i=1;</div><div class="line">		StringBuffer s1=new StringBuffer(&quot;Hello&quot;);</div><div class="line">		testPassParameter(s1, i);</div><div class="line">		System.out.println(s1);</div><div class="line">		System.out.println(i);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hello World</div><div class="line">1</div></pre></td></tr></table></figure>
+<p>按引用传递起始于传递指针类似，是把对象的地址作为参数的，如图<br><img src="http://img.blog.csdn.net/20170619210207041?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU1NjA0MjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="值传递与引用传递的区别"><br>i为基本类型，也因此是按值传递，此时会创建一个副本，该副本与i有相同的值，把这个副本作为参数赋给n。内部修改的是n的值，与i无关。<br>形参ss1与实参s1指向的是同一快存储空间，因此修改ss1后，s1指向的字符串也被修改了。</p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/05/08/WebService开发/" rel="next" title="Web Service开发">
+    下一篇：Web Service开发
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2017/06/21/值传递和引用传递/" data-title="值传递和引用传递" data-url="http://nwsuafzq.github.io/2017/06/21/值传递和引用传递/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'zhangqiong'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>

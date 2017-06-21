@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2017-05-08T13:34:05.270Z</updated>
+  <updated>2017-06-21T14:03:31.280Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>值传递和引用传递</title>
+    <link href="http://nwsuafzq.github.io/2017/06/21/%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/"/>
+    <id>http://nwsuafzq.github.io/2017/06/21/值传递和引用传递/</id>
+    <published>2017-06-21T14:01:16.205Z</published>
+    <updated>2017-06-21T14:03:31.280Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;java中提供了两种参数传递的方法：值传递和引用传递。&lt;/p&gt;
+&lt;h2 id=&quot;值传递&quot;&gt;&lt;a href=&quot;#值传递&quot; class=&quot;headerlink&quot; title=&quot;值传递&quot;&gt;&lt;/a&gt;值传递&lt;/h2&gt;&lt;p&gt;方法调用中，实参会把它的值传给形参，形参只是用实参的值初始化一
+    
+    </summary>
+    
+      <category term="Java" scheme="http://nwsuafzq.github.io/categories/Java/"/>
+    
+    
+      <category term="java" scheme="http://nwsuafzq.github.io/tags/java/"/>
+    
+      <category term="参数传递" scheme="http://nwsuafzq.github.io/tags/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/"/>
+    
+  </entry>
   
   <entry>
     <title>Web Service开发</title>
@@ -460,31 +483,6 @@
       <category term="Bean" scheme="http://nwsuafzq.github.io/tags/Bean/"/>
     
       <category term="EJB" scheme="http://nwsuafzq.github.io/tags/EJB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我对Spring中&lt;bean&gt;的理解</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/%E6%88%91%E5%AF%B9Spring%E4%B8%AD-bean-%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/我对Spring中-bean-的理解/</id>
-    <published>2016-12-26T14:04:16.624Z</published>
-    <updated>2016-12-26T14:05:25.033Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20161125194644255&quot; alt=&quot;bean.xml截图&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在Service层需要生成bookDAO的get set 方法，如下图：&lt;br&gt;&lt;img src=&quot;http://i
-    
-    </summary>
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/categories/Java-EE/"/>
-    
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/tags/Java-EE/"/>
-    
-      <category term="Spring" scheme="http://nwsuafzq.github.io/tags/Spring/"/>
-    
-      <category term="Bean" scheme="http://nwsuafzq.github.io/tags/Bean/"/>
     
   </entry>
   

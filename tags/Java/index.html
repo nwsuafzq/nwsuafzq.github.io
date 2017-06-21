@@ -7,7 +7,7 @@
 
     
 
-    <title>Java | 所长的blog</title>
+    <title>java | 所长的blog</title>
     <meta name="author" content="ZhangQiong">
     
     <meta name="description" content="hello world !!">
@@ -204,7 +204,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/Java/">
-                    Java <span class="right">2 篇</span></a>
+                    Java <span class="right">3 篇</span></a>
                 </a>
             </li>
 
@@ -337,7 +337,7 @@
         
 
         
-            <a class="breadcrumb" href="/tags/Java/">Java</a>
+            <a class="breadcrumb" href="/tags/java/">java</a>
         
     </div>
 </nav>
@@ -346,34 +346,10 @@
 
     <div class="collection mt-0">
         
-            <a href="/2017/04/09/消息中间件/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-04-09T08:24:17.087Z">2017-04-09</time>
+            <a href="/2017/06/21/值传递和引用传递/" class="collection-item grey-text text-darken-1">
+                <time datetime="2017-06-21T14:01:16.205Z">2017-06-21</time>
                 <span>&nbsp;&nbsp;&nbsp;</span>
-                消息中间件应用开发
-            </a>
-        
-            <a href="/2017/04/02/RMI+JDBC远端数据库的访问/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-04-02T08:58:50.821Z">2017-04-02</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                RMI+JDBC远端数据库的访问
-            </a>
-        
-            <a href="/2017/04/02/基于CORBA技术开发一个考试成绩查询系统/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-04-02T08:41:44.339Z">2017-04-02</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                基于CORBA技术开发一个考试成绩查询系统
-            </a>
-        
-            <a href="/2016/12/26/java 高级for循环/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-12-26T14:03:03.644Z">2016-12-26</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                java 高级for循环
-            </a>
-        
-            <a href="/2016/12/26/”==“和.equals()的区别分析/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-12-26T14:02:05.090Z">2016-12-26</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                ”==“和.equals()的区别分析
+                值传递和引用传递
             </a>
         
     </div>
@@ -632,6 +608,62 @@
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"
                                 }
                                 str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60086238" charset="UTF-8"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</body>
+</html>
+                   str += "</li>";
                             }
                         });
                         str += "</ul>";
