@@ -4,6 +4,12 @@
   
     
     <entry>
+      <title><![CDATA[拼多多小熊吃糖编程题]]></title>
+      <url>http://nwsuafzq.github.io/2017/09/05/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E7%AC%94%E8%AF%95%E5%B0%8F%E7%86%8A%E5%90%83%E7%B3%96/</url>
+      <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> sep2th.pinduoduo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@Author</span> ZhangQiong nwsuafzq@hotmail.com</div><div class="line"> * <span class="doctag">@Date</span> 2017/9/2</div><div class="line"> * <span class="doctag">@Time</span> 14:56.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> m,ArrayList&lt;Integer&gt; candylist, LinkedHashMap&lt;Integer,Integer&gt; bearmap)</span></span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">        Object[] key_arr = bearmap.keySet().toArray();</div><div class="line">        Arrays.sort(key_arr);</div><div class="line"></div><div class="line">        <span class="keyword">for</span>  (<span class="keyword">int</span> i=key_arr.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--) &#123;</div><div class="line">            <span class="keyword">int</span> value = bearmap.get(key_arr[i]);</div><div class="line">            <span class="keyword">int</span> shengyu=value;</div><div class="line">            <span class="keyword">int</span> index=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = index; j &lt;candylist.size(); j++) &#123;</div><div class="line"><span class="comment">//                System.out.println(candylist.get(j)+"yayayay"+"   j:"+j);</span></div><div class="line">                <span class="keyword">if</span>(shengyu-candylist.get(j)&gt;=<span class="number">0</span>) &#123;</div><div class="line"><span class="comment">//                    System.out.println(candylist.get(j)+"aaaaa"+shengyu);</span></div><div class="line">                    shengyu = shengyu - candylist.get(j);</div><div class="line">                    candylist.remove(j);</div><div class="line">                    j--;</div><div class="line">                &#125;</div><div class="line">                bearmap.put((Integer) key_arr[i],shengyu);</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">        ArrayList&lt;Integer&gt; candylist=<span class="keyword">new</span> ArrayList();</div><div class="line">        LinkedHashMap&lt;Integer,Integer&gt; bearmap=<span class="keyword">new</span> LinkedHashMap&lt;Integer,Integer&gt;();</div><div class="line"></div><div class="line">        <span class="keyword">int</span> n=scanner.nextInt();<span class="comment">//熊数量</span></div><div class="line">        <span class="keyword">int</span> m=scanner.nextInt();<span class="comment">//糖果数量</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;m ; i++) &#123;</div><div class="line">            candylist.add(scanner.nextInt());</div><div class="line">        &#125;</div><div class="line">        Collections.sort(candylist);</div><div class="line">        Collections.reverse(candylist);</div><div class="line">        <span class="comment">/*for (int i:candylist</span></div><div class="line">             ) &#123;</div><div class="line">            System.out.println(i);</div><div class="line"></div><div class="line">        &#125;*/</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;n ; i++) &#123;</div><div class="line">            <span class="keyword">int</span> k=scanner.nextInt();</div><div class="line">            <span class="keyword">int</span> v=scanner.nextInt();</div><div class="line">            bearmap.put(k,v);</div><div class="line">        &#125;</div><div class="line">        func(m,candylist,bearmap);</div><div class="line"></div><div class="line">        Set&lt;Integer&gt; keySet = bearmap.keySet();</div><div class="line">        Iterator&lt;Integer&gt; iter = keySet.iterator();</div><div class="line">        <span class="keyword">while</span>(iter.hasNext())&#123;</div><div class="line">            <span class="keyword">int</span> key = iter.next();</div><div class="line">            System.out.println(bearmap.get(key));</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[实现Java多线程]]></title>
       <url>http://nwsuafzq.github.io/2017/06/21/%E5%AE%9E%E7%8E%B0Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
       <content type="html"><![CDATA[<p>前两种最为常用</p>
@@ -422,15 +428,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP作用对象小结]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
-      <content type="html"><![CDATA[<p>有page；request；session；application</p>
-<hr>
-<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[jsp动作元素forward和jsp内置对象response的sendRediret()方法的区别]]></title>
       <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0forward%E5%92%8Cjsp%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1response%E7%9A%84sendRediret()%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<hr>
@@ -443,10 +440,11 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JSP与Servlet区别]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
-<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
+      <title><![CDATA[JSP作用对象小结]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/jsp%E5%AF%B9%E8%B1%A1%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>有page；request；session；application</p>
+<hr>
+<p>page范围：<br>在这个范围的对象只能在被创建的页面中访问，页面执行完毕，这个范围内的对象也将丢弃。<br>request范围：<br>可以在请求对象产生后、响应完成前，被请求的页面和调用forward之后的页面及被include的页面访问。<br>每个新请求都会重新创建和删除这个范围的对象。<br>session范围：<br>任何一个参与会话的jsp页面都可以访问该范围内的对象。<br>application范围：<br>在整个web程序运行期间，任何一个jsp页面都可以访问该范围的对象</p>
 ]]></content>
     </entry>
     
@@ -458,9 +456,25 @@
     </entry>
     
     <entry>
+      <title><![CDATA[JSP与Servlet区别]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/26/JSP%E5%92%8CServlet%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>#编程方式不同：<br>JSP技术是为了解决在servlet中难以生成复杂的web页面。jsp将java代码直接嵌入到html代码中。</p>
+<p>#编程方式不同：<br>servlet必须有开发人员在web应用部署到服务器前编译；jsp的转换和编译由servlet容器自动完成。servlet每修改一次要重新编译部署，jsp被修改后容器自动检测。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Linux下安装Git]]></title>
       <url>http://nwsuafzq.github.io/2016/12/21/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Git/</url>
       <content type="html"><![CDATA[<p>首先看看是否安装了git，命令行输入<strong><em>git</em></strong>,看是否有相关信息，没有就要安装了。。<br>输入：<br>sudo apt-get install git<br>即可</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
+      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
+      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
+<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
 ]]></content>
     </entry>
     
@@ -475,14 +489,6 @@
 <p>这样直接访问xxx.xxx.com就可以访问你设置的默认目录了。</p>
 <hr>
 <p>我也将我的网站设置了默认访问的目录<br>另外附上我的我的个人网站 简易BBS：<a href="http://www.nwafulive.cn/" target="_blank" rel="external">http://www.nwafulive.cn/</a><br>欢迎访问！</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[xmapp整合的Apache服务器更改端口号]]></title>
-      <url>http://nwsuafzq.github.io/2016/12/21/xmapp%E6%95%B4%E5%90%88%E7%9A%84Apache%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9B%B4%E6%94%B9%E7%AB%AF%E5%8F%A3%E5%8F%B7/</url>
-      <content type="html"><![CDATA[<p>我的云服务器上运行着tomcat和xmapp整合的Apache服务器。<br>我的apache默认端口是80可能会不安全，于是我想把Apache的端口号改一下<br><img src="http://img.blog.csdn.net/20161129170634598" alt="xmapp"><br>点击config</p>
-<p>打开http.conf<br><img src="http://img.blog.csdn.net/20161129171524346" alt="这里写图片描述"><br>将listen 80 修改为 listen xx    xx为你想改的端口号</p>
 ]]></content>
     </entry>
     

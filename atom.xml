@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nwsuafzq.github.io/"/>
-  <updated>2017-06-21T14:21:39.933Z</updated>
+  <updated>2017-09-05T13:13:22.823Z</updated>
   <id>http://nwsuafzq.github.io/</id>
   
   <author>
@@ -14,6 +14,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>拼多多小熊吃糖编程题</title>
+    <link href="http://nwsuafzq.github.io/2017/09/05/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E7%AC%94%E8%AF%95%E5%B0%8F%E7%86%8A%E5%90%83%E7%B3%96/"/>
+    <id>http://nwsuafzq.github.io/2017/09/05/拼多多笔试小熊吃糖/</id>
+    <published>2017-09-05T13:12:16.574Z</published>
+    <updated>2017-09-05T13:13:22.823Z</updated>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+    
+    </summary>
+    
+      <category term="算法" scheme="http://nwsuafzq.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>实现Java多线程</title>
@@ -455,31 +473,6 @@
       <category term="sql" scheme="http://nwsuafzq.github.io/tags/sql/"/>
     
       <category term="数据库" scheme="http://nwsuafzq.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>EJB会话bean，无状态会话bean和有状态会话bean</title>
-    <link href="http://nwsuafzq.github.io/2016/12/26/EJB%E4%BC%9A%E8%AF%9Dbean%EF%BC%8C%E6%97%A0%E7%8A%B6%E6%80%81%E4%BC%9A%E8%AF%9Dbean%E5%92%8C%E6%9C%89%E7%8A%B6%E6%80%81%E4%BC%9A%E8%AF%9Dbean/"/>
-    <id>http://nwsuafzq.github.io/2016/12/26/EJB会话bean，无状态会话bean和有状态会话bean/</id>
-    <published>2016-12-26T14:10:59.231Z</published>
-    <updated>2017-04-02T09:15:33.573Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;搞了一晚上加一白天，最后下了个jboss5终于好了。。。每次都是jboss配置问题。。。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;开发部署一个会话bean，包括有状态和无状态，模拟一个简单购物车&lt;/p&gt;
-&lt;h2 id=&quot;首先服务端&quot;&gt;&lt;a href=&quot;#首先服务端&quot; class=&quot;head
-    
-    </summary>
-    
-      <category term="EJB" scheme="http://nwsuafzq.github.io/categories/EJB/"/>
-    
-    
-      <category term="Java EE" scheme="http://nwsuafzq.github.io/tags/Java-EE/"/>
-    
-      <category term="EJB" scheme="http://nwsuafzq.github.io/tags/EJB/"/>
     
   </entry>
   
